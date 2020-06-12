@@ -1,5 +1,6 @@
 package miu.edu.cs425.SEProject.eHouseRentAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -35,19 +36,22 @@ public class User {
     private Address address;
     @OneToMany(mappedBy = "owner")
     //@JsonIgnoreProperties("{ owner}")
+    @JsonBackReference()
     private List<House> userHouse;
     @ManyToMany
     @JoinTable(name = "users_roles",
             joinColumns = {@JoinColumn(name = "user_Id", referencedColumnName = "userId")},
             inverseJoinColumns = {@JoinColumn(name = "role_Id", referencedColumnName = "roleId")})
     private List<Role> role;
-    @OneToMany(mappedBy = "user")
-    private List<BookingRecord> bookingRecord;
+//    @OneToMany(mappedBy = "user")
+////    @JsonBackReference()
+//    @JsonIgnoreProperties(value="user")
+//    private List<BookingRecord> bookingRecord;
 
     public User() {
     }
 
-    public User(@NotBlank(message = "firstName must have value") String firstName, @NotBlank(message = "lastName must have value") String lastName, @NotBlank(message = "phoneNumber must have value") String phoneNo, @NotBlank(message = "userName must have value") String userName, @NotBlank(message = "passWord must have value") String passWord, Address address, List<House> userHouse, List<Role> role, List<BookingRecord> bookingRecord) {
+    public User(@NotBlank(message = "firstName must have value") String firstName, @NotBlank(message = "lastName must have value") String lastName, @NotBlank(message = "phoneNumber must have value") String phoneNo, @NotBlank(message = "userName must have value") String userName, @NotBlank(message = "passWord must have value") String passWord, Address address, List<House> userHouse, List<Role> role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNo = phoneNo;
@@ -56,7 +60,7 @@ public class User {
         this.address = address;
         this.userHouse = userHouse;
         this.role = role;
-        this.bookingRecord = bookingRecord;
+//        this.bookingRecord = bookingRecord;
     }
 
     public Long getUserId() {
@@ -129,13 +133,5 @@ public class User {
 
     public void setUserHouse(List<House> userHouse) {
         this.userHouse = userHouse;
-    }
-
-    public List<BookingRecord> getBookingRecord() {
-        return bookingRecord;
-    }
-
-    public void setBookingRecord(List<BookingRecord> bookingRecord) {
-        this.bookingRecord = bookingRecord;
     }
 }

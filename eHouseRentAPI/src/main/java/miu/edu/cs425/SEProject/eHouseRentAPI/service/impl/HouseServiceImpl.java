@@ -7,6 +7,7 @@ import miu.edu.cs425.SEProject.eHouseRentAPI.service.HouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,8 +42,11 @@ public class HouseServiceImpl implements HouseService {
     }
 
     @Override
-    public List<House> getListOfHouses() {
-        return houseRepository.findAll();
+    public House[] getListOfHouses() {
+        List<House> houses=houseRepository.findAll();
+        House[] h=new House[houses.size()];
+        houses.toArray(h);
+        return h;
     }
 
     @Override
