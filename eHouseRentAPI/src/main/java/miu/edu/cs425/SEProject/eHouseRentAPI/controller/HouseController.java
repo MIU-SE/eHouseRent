@@ -14,7 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/ehouserent/house")
+@CrossOrigin(allowedHeaders = "*")
+@RequestMapping(value="/ehouserent/house")
 public class HouseController {
     @Autowired
     HouseService houseService;
