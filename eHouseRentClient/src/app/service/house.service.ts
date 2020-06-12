@@ -22,11 +22,13 @@ export class HouseService {
    return this.http.get(this.baseURL+ '/get/' + id);
  }
 
- public save(student: House) {
-   return this.http.post<House>(this.baseURL+'/register', student);
+ public save(house: House) {
+   return this.http.post<House>(this.baseURL+'/register', house);
  }
 
  public delete(id: number) {
    return this.http.delete(this.baseURL+'/delete/'+id);
  }
+
+ 
 }
