@@ -24,8 +24,8 @@ public class BookingRecordController {
     @DeleteMapping(value = {"/delete/{bookingRecordId}"})
     public void deletBooking(@PathVariable("bookingRecordId") Long bookingRecordId ){
         bookingRecordService.deletBooking(bookingRecordId);
-
     }
+
     @GetMapping(value = "/list")
     public List<BookingRecord> getBooking(){
         return bookingRecordService.getAllBookings();

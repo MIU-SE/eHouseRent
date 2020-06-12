@@ -1,5 +1,7 @@
 package miu.edu.cs425.SEProject.eHouseRentAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -28,6 +30,7 @@ public class BookingRecord {
     private House house;
     @ManyToOne
     @JoinColumn(name = "userId")
+//    @JsonIgnoreProperties(value="bookingRecord")
     private User user;
 
     public User getUser() {
