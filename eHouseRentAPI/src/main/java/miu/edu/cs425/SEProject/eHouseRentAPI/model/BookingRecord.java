@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -13,21 +14,21 @@ public class BookingRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookingRecordId;
-    @NotBlank(message ="{NotBlank}" )
-//    @DateTimeFormat
-    @NotBlank(message ="{NotBlank}" )
+
+    //    @DateTimeFormat
+    @NotNull(message = "{NotNull}")
     private LocalDate checkInDate;
     //@DateTimeFormat
-    @NotBlank(message ="{NotBlank}" )
+    @NotNull(message = "{NotNull}")
     private LocalDate checkOutDate;
-    @NotBlank(message ="{NotBlank}" )
+    @NotNull(message = "{NoNUll}")
     private Double totalPrice;
     @OneToOne
-    @JoinColumn(name="houseId")
+    @JoinColumn(name = "houseId")
     private House house;
-     @ManyToOne
-     @JoinColumn(name="userId")
-     private User user;
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
 
     public User getUser() {
         return user;
@@ -40,11 +41,12 @@ public class BookingRecord {
     public BookingRecord() {
     }
 
-    public BookingRecord(LocalDate checkInDate, LocalDate checkOutDate, Double totalPrice,House house) {
+    public BookingRecord( LocalDate checkInDate, @NotNull(message = "{NotNull}") LocalDate checkOutDate, @NotNull(message = "{NoNUll}") Double totalPrice, House house, User user) {
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.totalPrice = totalPrice;
-        this.house=house;
+        this.house = house;
+        this.user = user;
     }
 
     public Long getBookingRecordId() {
@@ -87,3 +89,5 @@ public class BookingRecord {
         this.house = house;
     }
 }
+
+

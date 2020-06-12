@@ -34,20 +34,22 @@ public class House {
     public House() {
     }
 
-    public House(@NotBlank(message = "price must have value") Double price, @NotBlank(message = "houseType must have value") String houseType, @NotBlank(message = "numberOfRooms must have value") Integer numberOfRooms, Address address, User owner, @NotBlank String description) {
+    public House( Double price, @NotBlank(message = "{NotBlank}")
+            String houseType, @NotNull(message = "{NotBlank}") Integer numberOfRooms, @NotBlank(message = "{NotBlank}")
+            String description, Address address, User owner) {
         this.price = price;
         this.houseType = houseType;
         this.numberOfRooms = numberOfRooms;
+        this.description = description;
         this.address = address;
         this.owner = owner;
-        this.description = description;
     }
 
     public Long getHouseId() {
         return houseId;
     }
 
-    public void setHouseID(Long houseId) {
+    public void setHouseId(Long houseId) {
         this.houseId = houseId;
     }
 
@@ -57,22 +59,6 @@ public class House {
 
     public void setPrice(Double price) {
         this.price = price;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public User getOwner() {
-        return owner;
-    }
-
-    public void setOwner(User owner) {
-        this.owner = owner;
     }
 
     public String getHouseType() {
@@ -97,5 +83,21 @@ public class House {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 }
