@@ -1,5 +1,7 @@
 package miu.edu.cs425.SEProject.eHouseRentAPI.model;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -15,7 +17,7 @@ public class Address {
     private String houseNumber;
     @NotBlank(message ="{NotBlank}" )
     private String   street;
-    @Size(min = 5, max = 9, message="{zipcode}")
+   // @Range(min = 5, max = 9, message="{zipcode}")
     private Integer zipCode;
     @NotBlank(message ="{NotBlank}" )
     private String city;

@@ -1,5 +1,7 @@
 package miu.edu.cs425.SEProject.eHouseRentAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
@@ -32,6 +34,7 @@ public class User {
     @JoinColumn(name = "address_Id")
     private Address address;
     @OneToMany(mappedBy = "owner")
+    //@JsonIgnoreProperties("{ owner}")
     private List<House> userHouse;
     @ManyToMany
     @JoinTable(name = "users_roles",
