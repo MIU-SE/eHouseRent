@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(allowedHeaders = "*")
-@RequestMapping(value="/ehouserent/api")
+@RequestMapping(value="/ehouserent/house")
 public class HouseController {
 
     HouseService houseService;
