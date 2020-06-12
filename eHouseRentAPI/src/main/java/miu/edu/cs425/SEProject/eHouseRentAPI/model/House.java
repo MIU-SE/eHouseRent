@@ -1,7 +1,11 @@
 package miu.edu.cs425.SEProject.eHouseRentAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "houses")
@@ -9,21 +13,23 @@ public class House {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long houseId;
-    @NotBlank(message ="{NotBlank}" )
+    @NotNull(message ="{NotBlank}" )
     private Double price;
     @NotBlank(message ="{NotBlank}" )
     private String houseType;
-    @NotBlank(message ="{NotBlank}" )
+    @NotNull(message ="{NotBlank}" )
     private Integer numberOfRooms;
     @NotBlank(message ="{NotBlank}" )
     private String description;
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name="addres_Id")
     private Address address;
+
     @ManyToOne(cascade = CascadeType.PERSIST)
+   // @JsonIgnoreProperties("{userHouse}")
+    @JsonBackReference()
     @JoinColumn(name = "owner_Id")
     private  User owner;
-
 
     public House() {
     }
