@@ -9,12 +9,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HouseService } from './service/house.service';
 import { HouseFormComponent } from './house-form/house-form.component';
+import { SearchhouseComponent } from './searchhouse/searchhouse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HouseListComponent,
-    HouseFormComponent
+    HouseFormComponent,
+    SearchhouseComponent
   ],
   imports: [
     BrowserModule,

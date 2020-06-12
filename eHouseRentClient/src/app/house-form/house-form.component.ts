@@ -11,11 +11,11 @@ import { Subscription } from 'rxjs';
 
 export class HouseFormComponent implements OnInit {
 
-  house:House;
+  house: House;
   sub: Subscription;
 
-  constructor(private route:ActivatedRoute, private router:Router, private houseService:HouseService) { 
-    this.house=new House();
+  constructor(private route: ActivatedRoute, private router: Router, private houseService: HouseService) {
+    this.house = new House();
   }
 
   ngOnInit(): void {
