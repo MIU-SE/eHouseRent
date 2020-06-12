@@ -14,7 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/ehouserent/api")
+@CrossOrigin(allowedHeaders = "*")
+@RequestMapping(value="/ehouserent/house")
 public class HouseController {
     @Autowired
     HouseService houseService;
@@ -38,9 +39,6 @@ public class HouseController {
 
     }
 
-
-
-
     public HouseController(HouseService houseService) {
         this.houseService = houseService;
     }
@@ -55,7 +53,7 @@ public class HouseController {
         return houseService.saveHouse(house);
     }
 
-    @GetMapping(value="/get/list")
+    @GetMapping(value="/list")
     public List<House> getHouse() {
         return houseService.getListOfHouses();
 
