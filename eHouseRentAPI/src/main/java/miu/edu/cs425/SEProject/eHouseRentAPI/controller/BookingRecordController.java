@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "ehouserent/api/booking")
+@RequestMapping(value = "ehouserent/booking")
 public class BookingRecordController {
     @Autowired
     BookingRecordServiceImpl bookingRecordService;

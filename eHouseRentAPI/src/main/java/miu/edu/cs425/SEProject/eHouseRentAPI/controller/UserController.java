@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/ehouserent/api")
+@RequestMapping(value = "/ehouserent/user")
 public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping(value = "/save")
+    @PostMapping(value = "/add")
     public void saveUser(@RequestBody User user){
         userService.save(user);
     }
 
-    @GetMapping(value = "/get")
+    @GetMapping(value = "/list")
     public List<User> getListUser(){
         return userService.getAll();
     }
