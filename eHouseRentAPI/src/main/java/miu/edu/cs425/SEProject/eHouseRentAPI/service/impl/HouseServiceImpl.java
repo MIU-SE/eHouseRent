@@ -1,5 +1,6 @@
 package miu.edu.cs425.SEProject.eHouseRentAPI.service.impl;
 
+import miu.edu.cs425.SEProject.eHouseRentAPI.model.Address;
 import miu.edu.cs425.SEProject.eHouseRentAPI.model.House;
 import miu.edu.cs425.SEProject.eHouseRentAPI.repository.HouseRepository;
 import miu.edu.cs425.SEProject.eHouseRentAPI.service.HouseService;
@@ -11,8 +12,23 @@ import java.util.Optional;
 
 @Service
 public class HouseServiceImpl implements HouseService {
+
     @Autowired
     private HouseRepository houseRepository;
+
+   public  HouseServiceImpl(HouseRepository houseRepository){
+       this.houseRepository= houseRepository;
+   }
+
+    @Override
+    public House findByAddress(Address address) {
+        return houseRepository.findByAddress(address);
+    }
+//
+//    @Override
+//    public List<House> findAll() {
+//        return null;
+//    }
 
     @Override
     public House getHouseById(long houseId) {

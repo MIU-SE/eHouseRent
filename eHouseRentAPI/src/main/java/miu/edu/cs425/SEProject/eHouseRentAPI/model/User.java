@@ -30,7 +30,7 @@ public class User {
     @Size(min = 4, max = 20, message = "{size.password}")
     private String passWord;
     @Valid
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_Id")
     private Address address;
     @OneToMany(mappedBy = "owner")

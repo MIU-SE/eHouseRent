@@ -36,6 +36,12 @@ public class Address {
         this.state = state;
     }
 
+    public Address(@NotBlank(message = "{NotBlank}") String city, @NotBlank(message = "{NotBlank}") String state) {
+
+        this.city = city;
+        this.state = state;
+    }
+
     public Long getAddressId() {
         return addressId;
     }

@@ -21,6 +21,11 @@ public class Role {
         return roleId;
     }
 
+    public Role(Long roleId, @NotBlank(message = "{NotBlank}") String role) {
+        this.roleId = roleId;
+        this.role = role;
+    }
+
     public void setRoleID(Long roleId) {
         this.roleId = roleId;
     }
