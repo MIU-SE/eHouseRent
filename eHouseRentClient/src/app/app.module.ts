@@ -11,6 +11,7 @@ import { HouseService } from './service/house.service';
 import { HouseFormComponent } from './house-form/house-form.component';
 
 import { HouseSearchComponent } from './house-search/house-search.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { HouseSearchComponent } from './house-search/house-search.component';
     HouseListComponent,
     HouseFormComponent,
 
-    HouseSearchComponent
+    HouseSearchComponent,
+
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

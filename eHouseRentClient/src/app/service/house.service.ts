@@ -30,7 +30,9 @@ export class HouseService {
    return this.http.delete(this.baseURL+'/delete/'+id);
  }
 public getHouseByStateAndCity(state:String,city:String){
-  return this.http.get(this.baseURL+'/search');
+  console.log("jjjj");
+  return this.http.get(this.baseURL+'/search/state/city');
+
 }
  
 }

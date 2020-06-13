@@ -14,7 +14,8 @@ export class HouseFormComponent implements OnInit {
   house: House;
   sub: Subscription;
 
-  constructor(private route: ActivatedRoute, private router: Router, private houseService: HouseService) {
+  constructor(private route: ActivatedRoute, private router: 
+    Router, private houseService: HouseService) {
     this.house = new House();
   }
 
