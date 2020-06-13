@@ -54,9 +54,8 @@ public class HouseController {
     }
 
     @GetMapping(value="/list")
-    public List<House> getHouse() {
+    public House[] getHouse() {
         return houseService.getListOfHouses();
-
     }
     //    @PutMapping(value = "/edit/{houseId}")
 //    public House editHouse(@Valid @RequestBody House editedHouse, @PathVariable Long houseId) {

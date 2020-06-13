@@ -1,4 +1,3 @@
-
 export class Address {
     addressId:Number;
     houseNumber:String;

@@ -10,12 +10,13 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "ehouserent/booking")
 public class BookingRecordController {
+
     @Autowired
     BookingRecordServiceImpl bookingRecordService;
     @PostMapping(value = "/add")
     public void creatBookingRecord(@RequestBody BookingRecord bookingRecord){
         try {
-            System.out.println("new bookin grecord is coming");
+            System.out.println("new booking record is coming");
             bookingRecordService.saveBooking(bookingRecord);
         } catch (Exception ex) {
             System.out.println("Transaction Failed!!!");
@@ -24,8 +25,8 @@ public class BookingRecordController {
     @DeleteMapping(value = {"/delete/{bookingRecordId}"})
     public void deletBooking(@PathVariable("bookingRecordId") Long bookingRecordId ){
         bookingRecordService.deletBooking(bookingRecordId);
-
     }
+
     @GetMapping(value = "/list")
     public List<BookingRecord> getBooking(){
         return bookingRecordService.getAllBookings();

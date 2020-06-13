@@ -27,7 +27,7 @@ public class House {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
    // @JsonIgnoreProperties("{userHouse}")
-    @JsonBackReference()
+//    @JsonBackReference()
     @JoinColumn(name = "owner_Id")
     private  User owner;
 
