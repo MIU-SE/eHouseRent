@@ -1,141 +1,119 @@
-<!-- <div class="container" style="margin-top: 2em;">
-    <h3>Sign up</h3>
-
-    <form (ngSubmit)="onSubmit()" #SignUP="ngForm">
+<div class="container" style="margin-top: 2em;">
+    <h3>SignUp FORM</h3>
+    <form (ngSubmit)="onSubmit()" #SignUp="ngForm">
         <fieldset>
-            <input type="text" name="firstName" #FirstName="ngModel" required [(ngModel)]="user.firstName" />
+            <!-- <input type="hidden" name="userId" #userId="ngModel" [(ngModel)]="user.userId" /> -->
             <div class="container" style="margin-top: 1em;">
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="">LastName</label>
-
-                            <input type="text" name="LastName" type="text" class="form-control"
-                                [(ngModel)]="LastName" required #LastName="ngModel">
-                             <div *ngIf="houseType.invalid && (houseType.dirty || houseType.touched)"
-                                class="alert text-danger">
-                                <div *ngIf="houseType.errors.required"> -->
-
-<!-- </div>
-</div>
-</div>
-</div>
-<div class="col-md-6">
-    <div class="form-group">
-        <label for="password">PassWord</label>
-        <input text="userName" name="userName" type="text" class="form-control" [(ngModel)]="user.userName" required #UserName="ngModel"> -->
-
-<!-- <div *ngIf="numberOfRooms.invalid && (numberOfRooms.dirty || numberOfRooms.touched)"
-                                class="alert text-danger">
-                                <div *ngIf="numberOfRooms.errors.required">
-                                   -->
-<!-- 
-    </div>
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="row">
-
-
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="">Description</label>
-            <input id="description" name="description" type="text" class="form-control" [(ngModel)]="house.description" required #description="ngModel">
-
-            <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert text-danger">
-                <div *ngIf="description.errors.required">
-
-
+                            <label for="FirstName">FirstName</label>
+                            <!-- <div [hidden]="!studentNumber.valid && (studentNumber.dirty || studentNumber.touched)" class="alert alert-danger">Student number is required</div> -->
+                            <input text="firstName" name="firstName" type="text" class="form-control" [(ngModel)]="user.firstName" required #FirstName="ngModel">
+                            <!-- <div *ngIf="studentNumber.invalid && (studentNumber.dirty || studentNumber.touched)" class="alert text-danger">
+                                <div *ngIf="studentNumber.errors.required">
+                                    studentNumber is required. 
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input id="price" name="price" type="text" class="form-control" [(ngModel)]="house.price" required #price="ngModel">
-
-            <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert text-danger">
-                <div *ngIf="price.errors.required">
-
-
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="lastName">LastName</label>
+                    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="alert text-danger"></span>
+                    <input text="lastName" name="lastName" #lastName="ngModel" type="text" class="form-control" [(ngModel)]="user.lastName">
                 </div>
             </div>
-        </div>
-    </div>
-</div> -->
-<!-- <h5> ADDRESS</h5>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="userName">UserName</label>
+                    <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" class="alert text-danger"></span>
+                    <input text="userName" name="userName" type="text" #userName="ngModel" class="form-control" [(ngModel)]="user.userName">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="passWord">Password</label>
+                    <span th:if="${#fields.hasErrors('passWord')}" th:errors="*{passWord}" class="alert text-danger"></span>
+                    <input text="passWord" name="passWord" type="text" class="form-control" [(ngModel)]="user.passWord" #passWord="ngModel">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="phoneNumber">PhoneNumber</label>
+                    <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="alert text-danger"></span>
+                    <input text="phoneNumber" name="phoneNumber" type="text" class="form-control" [(ngModel)]="user.phoneNumber" #phoneNumber="ngModel">
+                </div>
+            </div>
+            <div>
+                <h5> ADDRESS</h5>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="hidden" name="addressId" #addressId="ngModel" [(ngModel)]="house.address.addressId" />
-
+                        <input type="hidden" name="addressId" #addressId="ngModel" [(ngModel)]="user.address.addressId" />
                         <label for="houseNumber">House Number</label>
-                        <input id="houseNumber" name="houseNumber" type="text" class="form-control"
-                            [(ngModel)]="house.address.houseNumber" required #houseNumber="ngModel">
+                        <input id="houseNumber" name="houseNumber" type="text" class="form-control" [(ngModel)]="user.address.houseNumber" required #houseNumber="ngModel">
+                    </div>
+                </div>
+            </div>
 
-                        <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)"
-                            class="alert text-danger">
-                            <div *ngIf="houseNumber.errors.required"> -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="street">Street</label>
+                    <input text="street" name="street" type="text" class="form-control" [(ngModel)]="user.address.street" required #street="ngModel">
 
+                    <div *ngIf="street.invalid && (street.dirty || street.touched)" class="alert text-danger">
+                        <div *ngIf="street.errors.required">
 
-<!-- </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="street">Street</label>
-                        <input id="price" name="street" type="text" class="form-control"
-                            [(ngModel)]="house.address.street" required #street="ngModel">
+            </div>
 
-                        <div *ngIf="street.invalid && (street.dirty || street.touched)" class="alert text-danger">
-                            <div *ngIf="street.errors.required">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input text="city" name="city" type="text" class="form-control" [(ngModel)]="user.address.city" required #city="ngModel">
 
-                            </div>
+                    <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert text-danger">
+                        <div *ngIf="city.errors.required">
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="city">City</label>
-                        <input id="price" name="city" type="text" class="form-control" [(ngModel)]="house.address.city"
-                            required #city="ngModel">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input text="state" name="state" type="text" class="form-control" [(ngModel)]="user.address.state" required #state="ngModel">
+                    <div *ngIf="state.invalid && (street.dirty || state.touched)" class="alert text-danger">
+                        <div *ngIf="state.errors.required">
 
-                        <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert text-danger">
-                            <div *ngIf="city.errors.required">
- </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="street">State</label>
-                        <input id="street" name="street" type="text" class="form-control"
-                            [(ngModel)]="house.address.street" required #state="ngModel">
-                            <div *ngIf="state.invalid && (street.dirty || state.touched)" class="alert text-danger">
-                            <div *ngIf="state.errors.required">
-                             
-                             </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="zipCode"> ZipCode</label>
+                    <input text="zipCode" name="zipCode" type="text" class="form-control" [(ngModel)]="user.address.zipCode" #zipCode="ngModel">
+                    <!-- <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="alert text-danger">
+                        <div *ngIf="zipCode.errors.required">
+
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="zipCode">ZipCode</label>
-                        <input id="zipCode" name="street" type="text" class="form-control"
-                            [(ngModel)]="house.address.street" required #zipCode="ngModel">
-                            <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="alert text-danger">
-                            <div *ngIf="zipCode.errors.required">
-                                
-                             </div>
-                        </div>
-                    </div>
-                </div> -->
+            </div>
+
+            <div style="float:right;">
+                <a href="user/add" class="btn btn-outline-warning">Submit</a>&nbsp;&nbsp;&nbsp;
+            </div>
+
+        </fieldset>
+    </form>
+</div>

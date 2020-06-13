@@ -1,15 +1,15 @@
 
 // import{House}from "./House";
 import{Address}from "./Address";
-export class user {
+export class User {
+
     firstName:String;
     lastName :String;
-    phoneNo :String;
+    phoneNumber :String;
     userName:String;
     passWord :String;
     email:String;
     password:String;
     address :Address;
-    // userHouse:House ;
-    //    role :Role;
+   
 }
