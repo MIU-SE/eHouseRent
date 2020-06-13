@@ -16,6 +16,7 @@ import { HouseSearchComponent } from './house-search/house-search.component';
 import { HouseBookingComponent } from './house-booking/house-booking.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { FilteredHouseListComponent } from './filtered-house-list/filtered-house-list.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     HouseFormComponent,
     HouseSearchComponent,
     HouseBookingComponent,
-    SignUpComponent
+    SignUpComponent,
+    FilteredHouseListComponent
 
   ],
   imports: [
