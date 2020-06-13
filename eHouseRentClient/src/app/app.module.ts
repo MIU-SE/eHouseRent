@@ -11,9 +11,12 @@ import { HouseService } from './service/house.service';
 import { BookingService } from './service/booking.service';
 
 import { HouseFormComponent } from './house-form/house-form.component';
+
 import { HouseSearchComponent } from './house-search/house-search.component';
 import { HouseBookingComponent } from './house-booking/house-booking.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SignUpComponent } from './sign-up/sign-up.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HouseListComponent,
     HouseFormComponent,
     HouseSearchComponent,
-    HouseBookingComponent
+    HouseBookingComponent,
+    SignUpComponent
+
   ],
   imports: [
     BrowserModule,

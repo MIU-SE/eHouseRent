@@ -29,6 +29,10 @@ export class HouseService {
  public delete(id: number) {
    return this.http.delete(this.baseURL+'/delete/'+id);
  }
+public getHouseByStateAndCity(state:String,city:String){
+  console.log("jjjj");
+  return this.http.get(this.baseURL+'/search/state/city');
 
+}
  
 }
