@@ -5,7 +5,8 @@ import { HouseFormComponent} from './house-form/house-form.component'
 
 const routes: Routes = [
   {path:'house/list',component:HouseListComponent},
-  {path:'owner/house/new', component:HouseFormComponent}
+  {path:'owner/house/new', component:HouseFormComponent},
+   {path:'owner/house/edit/:id',component:HouseFormComponent}
 ];
 
 @NgModule({

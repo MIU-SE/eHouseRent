@@ -10,7 +10,7 @@ export class HouseService {
   private baseURL:string;
 
   constructor(private http:HttpClient) {
-    this.baseURL='http://localhost:8080/eHouseRent/api/house';
+    this.baseURL='http://localhost:8080/ehouserent/house';
    }
    
    public findAll(): Observable<House[]> {
@@ -23,7 +23,7 @@ export class HouseService {
  }
 
  public save(house: House) {
-   return this.http.post<House>(this.baseURL+'/register', house);
+   return this.http.post<House>(this.baseURL+'/add', house);
  }
 
  public delete(id: number) {
