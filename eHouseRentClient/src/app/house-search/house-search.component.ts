@@ -12,7 +12,7 @@ import {HouseService} from '../service/house.service'
 })
 export class HouseSearchComponent implements OnInit {
 
-
+// house:House[];
   
   state:String;
   city:String;
@@ -25,15 +25,14 @@ export class HouseSearchComponent implements OnInit {
   
    
 searchHouse() {
-  
     this.houseService.getHouseByStateAndCity(this.state,this.city)
     .subscribe(result => this.gotoHouseList())
-  
+  // this.house=result;
 
     }
 
     gotoHouseList(){
-      this.router.navigate(['/house/list']);
+      this.router.navigate(['search/state/city']);
     }
       
   

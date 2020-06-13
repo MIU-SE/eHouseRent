@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -121,8 +122,5 @@
       }
     }
   },
-  "defaultProject": "eHouseRentClient",
-  "cli": {
-    "analytics": "9456423b-6c26-40dc-9e88-93f52875d134"
-  }
+  "defaultProject": "eHouseRentClient"
 }
