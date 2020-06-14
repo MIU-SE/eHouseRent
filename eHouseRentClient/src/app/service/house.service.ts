@@ -23,7 +23,7 @@ export class HouseService {
  }
 
  public save(house: House) {
-   return this.http.post<House>(this.baseURL+'/register', house);
+   return this.http.post<House>(this.baseURL+'/add', house);
  }
 
  public delete(id: number) {

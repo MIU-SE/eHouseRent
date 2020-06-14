@@ -5,14 +5,21 @@ import { HouseFormComponent} from './house-form/house-form.component'
 import { HouseBookingComponent } from './house-booking/house-booking.component';
 import { HouseSearchComponent} from './house-search/house-search.component';
 import { LoginComponent} from './login/login.component'
+import { FilteredHouseListComponent } from './filtered-house-list/filtered-house-list.component';
+
 
 const routes: Routes = [
   {path:'house/list',component:HouseListComponent},
   {path:'owner/house/add', component:HouseFormComponent},
   {path:'booking/add',component:HouseBookingComponent},
-  {path:'search/state/city',component:HouseSearchComponent},
+  // {path:'search/state/city',component:HouseSearchComponent},
   {path:'login',component:LoginComponent},
-  {path:'',redirectTo:'/search/state/city', pathMatch:'full'}
+  {path:'',redirectTo:'/search/state/city', pathMatch:'full'},
+   {path:'owner/house/edit/:id',component:HouseFormComponent},
+   {path:'search/state/city',component:FilteredHouseListComponent}
+
+
+
 ];
 
 @NgModule({

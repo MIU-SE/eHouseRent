@@ -1,83 +1,156 @@
-<h1>Hello</h1>
-<!-- <div class="container" style="margin-top: 2em;">
-    <h3>House FORM</h3>
+<div class="container" style="margin-top: 2em;">
+    <h3>HOUSE FORM</h3>
+
     <form (ngSubmit)="onSubmit()" #houseForm="ngForm">
         <fieldset>
-            <input type="hidden" name="houseId" #houseId="ngModel" [(ngModel)]="house.houseId"/>
+            <input type="hidden" name="houseId" #houseId="ngModel" [(ngModel)]="house.houseId" />
             <div class="container" style="margin-top: 1em;">
-                <div class="row"> 
+
+                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="studentNumber">Student Number</label> -->
- 
-                            <!-- <div [hidden]="!studentNumber.valid && (studentNumber.dirty || studentNumber.touched)" class="alert alert-danger">Student number is required</div> -->
-                            <!-- <input id="studentNumber" name="studentNumber" type="text" class="form-control" [(ngModel)]="student.studentNumber" required #studentNumber="ngModel">
-                            <div *ngIf="studentNumber.invalid && (studentNumber.dirty || studentNumber.touched)" class="alert text-danger">
-                                <div *ngIf="studentNumber.errors.required">
-                                    studentNumber is required.
-                                  </div>
+                            <label for="HouseType">House Type</label>
+
+                            <input id="houseType" name="houseType" type="text" class="form-control"
+                                [(ngModel)]="house.houseType" required #houseType="ngModel">
+                            <div *ngIf="houseType.invalid && (houseType.dirty || houseType.touched)"
+                                class="alert text-danger">
+                                <div *ngIf="houseType.errors.required">
+
                                 </div>
+                            </div>
                         </div>
                     </div>
-
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="first_name">First Name</label>
-                            <span th:if="${#fields.hasErrors('first_name')}" th:errors="*{first_name}" class="alert text-danger"></span>
-                            <input id="first_name" name="first_name" #first_name="ngModel" type="text" class="form-control" [(ngModel)]="student.first_name" >
-                        </div>
-                    </div>
+                            <label for="numberOfRooms">Number Of Rooms</label>
+                            <input id="numberOfRooms" name="numberOfRooms" type="text" class="form-control"
+                                [(ngModel)]="house.numberOfRooms" required #numberOfRooms="ngModel">
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="middleName">middle Name</label>
-                            <span th:if="${#fields.hasErrors('middleName')}" th:errors="*{middleName}" class="alert text-danger"></span>
-                            <input id="middleName" name="middleName" type="text" #middleName="ngModel" class="form-control" [(ngModel)]="student.middleName">
-                        </div>
-                    </div>
+                            <div *ngIf="numberOfRooms.invalid && (numberOfRooms.dirty || numberOfRooms.touched)"
+                                class="alert text-danger">
+                                <div *ngIf="numberOfRooms.errors.required">
+                                  
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="alert text-danger"></span>
-                            <input id="lastName" name="lastName" type="text" class="form-control" [(ngModel)]="student.lastName" #lastName="ngModel">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="dateOfEnrollment">Date of Enrollment</label>
-                            <span th:if="${#fields.hasErrors('dateOfEnrollment')}" th:errors="*{dateOfEnrollment}" class="alert text-danger"></span>
-                            <input id="dateOfEnrollment" name="dateOfEnrollment" #datOfEnrollment="ngModel" type="date" class="form-control" aria-describedby="startDatehHelp" [(ngModel)]="student.dateOfEnrollment">
-   			                </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="cgpa">cgpa</label>
-                            <span th:if="${#fields.hasErrors('cgpa')}" th:errors="*{cgpa}" class="alert text-danger"></span>
-                            <input id="cgpa" name="cgpa" type="text" #cgpa="ngModel"class="form-control" [(ngModel)]="student.cgpa">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6" style="float:right">
-                        <div class="form-group">
-                            <label for="isInternational">isInternational</label>
-                            <span th:if="${#fields.hasErrors('isInternational')}" th:errors="*{isInternational}" class="alert text-danger"></span>
-                            <select name="isInternational" id="isInternational" #isInternational="ngModel" type="text" class="form-control" [(ngModel)]="student.isInternational">
-                                <option disabled value="">Select ...</option>
-                                <option value="yes">Yes</option>
-                                <option value="No">No</option>
-                            </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-            </div>
-            <div style="float:right;">
-                <a href="/students" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
-                <button id="btnSubmit" type="submit" class="btn btn-outline-success" [disabled]="!studentForm.valid" >Add Student</button>
+
+                <div class="row">
+
+
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input id="description" name="description" type="text" class="form-control"
+                                [(ngModel)]="house.description" required #description="ngModel">
+
+                            <div *ngIf="description.invalid && (description.dirty || description.touched)"
+                                class="alert text-danger">
+                                <div *ngIf="description.errors.required">
+                                  
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input id="price" name="price" type="text" class="form-control" [(ngModel)]="house.price"
+                                required #price="ngModel">
+
+                            <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert text-danger">
+                                <div *ngIf="price.errors.required">
+                                   
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5> ADDRESS</h5>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="hidden" name="addressId" #addressId="ngModel" [(ngModel)]="house.address.addressId" />
+
+                        <label for="houseNumber">House Number</label>
+                        <input id="houseNumber" name="houseNumber" type="text" class="form-control"
+                            [(ngModel)]="house.address.houseNumber" required #houseNumber="ngModel">
+
+                        <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)"
+                            class="alert text-danger">
+                            <div *ngIf="houseNumber.errors.required">
+                         
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="street">Street</label>
+                        <input id="street" name="street" type="text" class="form-control"
+                            [(ngModel)]="house.address.street" required #street="ngModel">
+
+                        <div *ngIf="street.invalid && (street.dirty || street.touched)" class="alert text-danger">
+                            <div *ngIf="street.errors.required">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input id="city" name="city" type="text" class="form-control" [(ngModel)]="house.address.city"
+                            required #city="ngModel">
+
+                        <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert text-danger">
+                            <div *ngIf="city.errors.required">
+ </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input id="state" name="state" type="text" class="form-control"
+                            [(ngModel)]="house.address.state" required #state="ngModel">
+                            <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert text-danger">
+                            <div *ngIf="state.errors.required">
+                             
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="zipCode">ZipCode</label>
+                        <input id="zipCode" name="zipCode" type="text" class="form-control"
+                            [(ngModel)]="house.address.zipCode" required #zipCode="ngModel">
+                            <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="alert text-danger">
+                            <div *ngIf="zipCode.errors.required">
+                                
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="float:right;">
+                    <a href="/house/list" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
+                    <button id="btnSubmit" type="submit" class="btn btn-outline-success"
+                        [disabled]="!houseForm.valid">Add
+                        House</button>
+                </div>
             </div>
         </fieldset>
     </form>
-</div> -->
+</div>

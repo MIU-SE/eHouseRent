@@ -16,7 +16,7 @@ public class Address {
     @NotBlank(message ="{NotBlank}" )
     private String houseNumber;
     @NotBlank(message ="{NotBlank}" )
-    private String   street;
+    private String street;
    // @Range(min = 5, max = 9, message="{zipcode}")
     private Integer zipCode;
     @NotBlank(message ="{NotBlank}" )

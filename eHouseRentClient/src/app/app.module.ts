@@ -18,6 +18,7 @@ import { HouseBookingComponent } from './house-booking/house-booking.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
+import { FilteredHouseListComponent } from './filtered-house-list/filtered-house-list.component';
 
 import { AuthInterceptor } from './service/AuthInterceptor'
 @NgModule({
@@ -28,7 +29,8 @@ import { AuthInterceptor } from './service/AuthInterceptor'
     HouseSearchComponent,
     HouseBookingComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    FilteredHouseListComponent
 
   ],
   imports: [

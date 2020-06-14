@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HouseService} from '../service/house.service';
 import {House} from '../model/House';
 import { Subscription } from 'rxjs';
-
+import { Address } from '../model/Address';
 @Component({
   selector: 'app-house-form',
   templateUrl: './house-form.component.html',
@@ -12,12 +12,13 @@ import { Subscription } from 'rxjs';
 
 export class HouseFormComponent implements OnInit {
 
-  house: House;
+  house:House;
+  // address:Address;
   sub: Subscription;
 
-  constructor(private route: ActivatedRoute, private router: 
-    Router, private houseService: HouseService) {
-    this.house = new House();
+  constructor(private route:ActivatedRoute, private router:Router, private houseService:HouseService) { 
+    this.house=new House();
+    this.house.address=new Address();
   }
 
   ngOnInit(): void {
@@ -37,7 +38,9 @@ export class HouseFormComponent implements OnInit {
   }
 
   onSubmit(){
-    this.houseService.save(this.house).subscribe(result => this.gotoHouseList())
+    console.log("hiiiii",this.house);
+     this.houseService.save(this.house).subscribe(result => this.gotoHouseList())
+
   }
 
   gotoHouseList(){

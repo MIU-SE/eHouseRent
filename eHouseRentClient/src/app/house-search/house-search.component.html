@@ -1,16 +1,23 @@
 <!-- import{House}from "./house"; -->
 <div class="container" style="margin-top: 2em;">
+    <form (ngSubmit)="searchHouse()" #houseForm="ngForm">
+
     <div>
         <span style="float:right;">
                     <label for="state">state</label>
-
                     <input type="input" name="state" #State="ngModel" [(ngModel)]="state"/>
-                    <label for="first_name">city</label>
+                    <label for="city">city</label>
                     <input type="input" name="city" #City="ngModel" [(ngModel)]="city"/>
                     <br>
-                    <a class="btn btn-outline-primary btn-lg" href="/search/state/city">SearchHouse</a>
-                   </span>
+                    <div style="float:right;">
+                        <button id="btnSubmit" type="submit" class="btn btn-outline-success"
+                            [disabled]="!houseForm.valid">Search House</button>
+                    </div>
 
+                    <!-- <a class="btn btn-outline-primary btn-lg" href="/search/state/city">SearchHouse</a> -->
+                    </span>
+                   
     </div>
 
-    
+    </form>
+</div>
