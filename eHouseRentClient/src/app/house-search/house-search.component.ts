@@ -20,16 +20,12 @@ export class HouseSearchComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router:Router,private houseService:HouseService) { }
 
   ngOnInit(): void {}
-
-
   
-   
-searchHouse() {
+  searchHouse() {
+  console.log(this.state);
   
     this.houseService.getHouseByStateAndCity(this.state,this.city)
     .subscribe(result => this.gotoHouseList())
-  
-
     }
 
     gotoHouseList(){

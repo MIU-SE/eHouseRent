@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HouseListComponent } from './house-list/house-list.component';
 
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HouseService } from './service/house.service';
 import { BookingService } from './service/booking.service';
+import { AuthService } from './service/auth.service'
 
 import { HouseFormComponent } from './house-form/house-form.component';
 
@@ -16,8 +17,9 @@ import { HouseSearchComponent } from './house-search/house-search.component';
 import { HouseBookingComponent } from './house-booking/house-booking.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { LoginComponent } from './login/login.component';
 
-
+import { AuthInterceptor } from './service/AuthInterceptor'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     HouseFormComponent,
     HouseSearchComponent,
     HouseBookingComponent,
-    SignUpComponent
+    SignUpComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -35,7 +38,12 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     FormsModule,
     NgbModule
   ],
-  providers: [HouseService,BookingService],
+  providers: [HouseService,BookingService,AuthService, AuthInterceptor,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
