@@ -32,14 +32,16 @@ public class HouseController {
 
         List<Address> address = addressService.findAllByStateAndCity(state, city);
         List<House> houses = new ArrayList<>();
+
         for (Address a : address) {
+            System.out.println("getting houses");
             House h = houseService.findByAddress(a);
             if(h!=null)
                 houses.add(h);
         }
-        for (House hx:houses){
-            System.out.println(hx.getHouseType());
-        }
+//        for (House hx:houses){
+//            System.out.println(hx.getHouseType());
+//        }
 
         House [] filteredHouses= new House[houses.size()];
          houses.toArray(filteredHouses);

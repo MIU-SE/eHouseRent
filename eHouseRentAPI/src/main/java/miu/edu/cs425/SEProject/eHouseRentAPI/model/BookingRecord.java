@@ -17,13 +17,15 @@ public class BookingRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookingRecordId;
 
-    //    @DateTimeFormat
+//@DateTimeFormat(pattern = "dd/MM/yyyy")
+//@JsonbDateFormat("dd/MM/yyyy")
     @NotNull(message = "{NotNull}")
     private LocalDate checkInDate;
     //@DateTimeFormat
+//    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @NotNull(message = "{NotNull}")
     private LocalDate checkOutDate;
-    @NotNull(message = "{NoNUll}")
+//    @NotNull(message = "{NoNUll}")
     private Double totalPrice;
     @OneToOne
     @JoinColumn(name = "houseId")
@@ -50,6 +52,11 @@ public class BookingRecord {
         this.totalPrice = totalPrice;
         this.house = house;
         this.user = user;
+    }
+
+    public BookingRecord(@NotNull(message = "{NotNull}") LocalDate checkInDate, @NotNull(message = "{NotNull}") LocalDate checkOutDate) {
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
     }
 
     public Long getBookingRecordId() {

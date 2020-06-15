@@ -13,6 +13,7 @@ import java.util.List;
 public class BookingRecordController {
     @Autowired
     BookingRecordServiceImpl bookingRecordService;
+
     @PostMapping(value = "/add")
     public void creatBookingRecord(@RequestBody BookingRecord bookingRecord) {
         try {
