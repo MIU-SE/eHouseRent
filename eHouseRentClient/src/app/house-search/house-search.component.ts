@@ -54,7 +54,7 @@ export class HouseSearchComponent implements OnInit {
 
   saveBooking() {
     // this.booking.house = this.houseLocal;
-    console.log(this.booking.house.houseId)
+    // console.log(this.booking.house.houseId)
     // console.log(this.houseLocal)
     this.bookingService.save(this.booking).subscribe(result => this.gotoSuccesfulPage())
     console.log("bokinnggg is on the way")
