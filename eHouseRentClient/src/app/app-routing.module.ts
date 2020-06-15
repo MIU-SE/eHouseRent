@@ -12,13 +12,13 @@ const routes: Routes = [
   { path: 'house/list', component: HouseListComponent },
   { path: 'owner/house/add', component: HouseFormComponent },
   { path: 'owner/house/edit/:id', component: HouseFormComponent },
-  { path: 'booking/add', component: HouseBookingComponent },
-  { path: '', component: HouseSearchComponent },
-  { path: 'search/state/city', component: FilteredHouseListComponent },
+  // { path: 'booking/add', component: HouseBookingComponent },
+  // { path: '', component: HouseSearchComponent },
+  // { path: 'search/state/city', component: FilteredHouseListComponent },
   { path: 'house/booking', component: HouseBookingComponent },
   { path: 'search/house', component: HouseSearchComponent },
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/search/state/city', pathMatch: 'full' }
+  { path: '', redirectTo: 'search/house', pathMatch: 'full' }
 
 ];
 
