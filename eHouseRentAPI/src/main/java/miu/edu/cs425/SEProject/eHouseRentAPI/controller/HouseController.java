@@ -39,9 +39,9 @@ public class HouseController {
             if(h!=null)
                 houses.add(h);
         }
-        for (House hx:houses){
-            System.out.println(hx.getHouseType());
-        }
+//        for (House hx:houses){
+//            System.out.println(hx.getHouseType());
+//        }
 
         House [] filteredHouses= new House[houses.size()];
          houses.toArray(filteredHouses);
