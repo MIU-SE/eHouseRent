@@ -2,9 +2,9 @@ import { HouseBookingComponent } from '../house-booking/house-booking.component'
 import { House } from './House';
 
 export class Booking {
-    booking_record_id:Number;
-    check_in_date:String;
-    check_out_date:Number;
-    toatal_price:Number;
-    house:House;
+    booking_record_id: Number;
+    check_in_date: Date;
+    check_out_date: Date;
+    toatal_price: Number;
+    house: House;
 }

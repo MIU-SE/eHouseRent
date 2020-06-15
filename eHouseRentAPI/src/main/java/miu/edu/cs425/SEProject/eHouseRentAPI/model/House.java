@@ -100,4 +100,14 @@ public class House {
     public void setOwner(User owner) {
         this.owner = owner;
     }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "price=" + price +
+                ", houseType='" + houseType + '\'' +
+                ", numberOfRooms=" + numberOfRooms +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
