@@ -13,7 +13,6 @@ import { Address } from '../model/Address';
 export class HouseFormComponent implements OnInit {
 
   house:House;
-  // address:Address;
   sub: Subscription;
 
   constructor(private route:ActivatedRoute, private router:Router, private houseService:HouseService) { 

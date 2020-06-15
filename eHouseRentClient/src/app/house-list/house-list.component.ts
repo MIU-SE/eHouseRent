@@ -4,6 +4,7 @@ import {HouseService} from '../service/house.service'
 import * as decode from 'jwt-decode';
 import { TokenStorageService } from '../service/token-storage.service'
 
+
 @Component({
   selector: 'app-house-list',
   templateUrl: './house-list.component.html',

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { House } from '../model/House';
+import { HouseService } from '../service/house.service'
 
 @Component({
   selector: 'app-filtered-house-list',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filtered-house-list.component.css']
 })
 export class FilteredHouseListComponent implements OnInit {
-
-  constructor() { }
+  houses: House[];
+  constructor(private houseService:HouseService) { }
 
   ngOnInit(): void {
+    // this.houseService.currentHouse.subscribe(message=>this.houses=message);
+    // console.log("houses are"+this.houses);
+    
   }
+
+
+
 
 }

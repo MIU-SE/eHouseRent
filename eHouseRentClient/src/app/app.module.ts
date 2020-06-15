@@ -40,7 +40,7 @@ import { AuthInterceptor } from './service/AuthInterceptor'
     FormsModule,
     NgbModule
   ],
-  providers: [HouseService,BookingService,AuthService, AuthInterceptor,
+  providers: [HouseService, BookingService, AuthService, AuthInterceptor,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

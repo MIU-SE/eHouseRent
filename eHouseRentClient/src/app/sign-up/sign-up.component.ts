@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
   //  user: User;
+  
 
   // constructor( private location: Location,
   //              private userService: UserService,

@@ -22,7 +22,8 @@ public class HouseServiceImpl implements HouseService {
    }
 
     @Override
-    public House findByAddress(Address address) {
+    public House findByAddress(Address address)
+    {
         return houseRepository.findByAddress(address);
     }
 //
