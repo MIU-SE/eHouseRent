@@ -21,8 +21,8 @@
         <form class="form-inline my-2 my-lg-0">
             <span style="color: #ffffff;">Welcome,&nbsp;</span>
             <a style="color: #ffffff; margin-right: 1em;" href="#">{{Guest}}</a>
-            <a routerLink="/login" *ngIf="Guest == null"  routerLinkActive="active" class="nav-link">Sign In</a>
-            <a routerLink="/register" *ngIf="Guest == null" routerLinkActive="active" class="btn btn-secondary">Sign up</a>
+            <a routerLink="/login" *ngIf="Guest == ''" routerLinkActive="active" class="nav-link">Sign In</a>
+            <a routerLink="/register" routerLinkActive="active" class="btn btn-secondary">Sign up</a>
             <a (click)="signout()" *ngIf="Guest != null" routerLinkActive="active" class="btn btn-secondary">Sign out</a>
 
         </form>

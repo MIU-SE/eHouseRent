@@ -1,6 +1,6 @@
 import { HouseBookingComponent } from '../house-booking/house-booking.component';
 import { House } from './House';
-import {user } from './user';
+import {User } from './user';
 
 export class Booking {
     bookingRecordId: Number;
@@ -8,5 +8,5 @@ export class Booking {
     checkOutDate: Date;
     totalPrice: Number;
     house: House;
-    user: user;
+    user: User;
 }

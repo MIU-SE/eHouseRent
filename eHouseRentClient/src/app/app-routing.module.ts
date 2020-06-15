@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'house/booking', component: HouseBookingComponent },
   { path: 'search/house', component: HouseSearchComponent },
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/search/state/city', pathMatch: 'full' },
+  { path: '', redirectTo: '/search/house', pathMatch: 'full' },
   {path:'register',component:SignUpComponent}
 
 ];
