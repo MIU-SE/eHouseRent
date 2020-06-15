@@ -15,7 +15,7 @@ public class BookingRecordServiceImpl implements BookingRecordService {
         BookingRecordRepository bookingRecordRepository;
 
         public void saveBooking(BookingRecord bookingRecord) {
-            bookingRecordRepository.save(bookingRecord);
+               bookingRecordRepository.save(bookingRecord);
         }
 
         public void deletBooking(Long bookingRecordId) {

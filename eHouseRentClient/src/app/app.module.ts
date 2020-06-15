@@ -17,8 +17,7 @@ import { HouseBookingComponent } from './house-booking/house-booking.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FilteredHouseListComponent } from './filtered-house-list/filtered-house-list.component';
-
-
+// import {PopupModule}from 'ng2-opd-popup'
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +26,8 @@ import { FilteredHouseListComponent } from './filtered-house-list/filtered-house
     HouseSearchComponent,
     HouseBookingComponent,
     SignUpComponent,
-    FilteredHouseListComponent
-
+    FilteredHouseListComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -37,7 +36,7 @@ import { FilteredHouseListComponent } from './filtered-house-list/filtered-house
     FormsModule,
     NgbModule
   ],
-  providers: [HouseService,BookingService],
+  providers: [HouseService, BookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

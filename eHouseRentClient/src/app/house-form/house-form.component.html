@@ -30,7 +30,7 @@
                             <div *ngIf="numberOfRooms.invalid && (numberOfRooms.dirty || numberOfRooms.touched)"
                                 class="alert text-danger">
                                 <div *ngIf="numberOfRooms.errors.required">
-                                  
+
 
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                             <div *ngIf="description.invalid && (description.dirty || description.touched)"
                                 class="alert text-danger">
                                 <div *ngIf="description.errors.required">
-                                  
+
 
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
 
                             <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert text-danger">
                                 <div *ngIf="price.errors.required">
-                                   
+
 
                                 </div>
                             </div>
@@ -78,7 +78,8 @@
                 <h5> ADDRESS</h5>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="hidden" name="addressId" #addressId="ngModel" [(ngModel)]="house.address.addressId" />
+                        <input type="hidden" name="addressId" #addressId="ngModel"
+                            [(ngModel)]="house.address.addressId" />
 
                         <label for="houseNumber">House Number</label>
                         <input id="houseNumber" name="houseNumber" type="text" class="form-control"
@@ -87,7 +88,7 @@
                         <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)"
                             class="alert text-danger">
                             <div *ngIf="houseNumber.errors.required">
-                         
+
 
                             </div>
                         </div>
@@ -115,7 +116,7 @@
 
                         <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert text-danger">
                             <div *ngIf="city.errors.required">
- </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -124,10 +125,10 @@
                         <label for="state">State</label>
                         <input id="state" name="state" type="text" class="form-control"
                             [(ngModel)]="house.address.state" required #state="ngModel">
-                            <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert text-danger">
+                        <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert text-danger">
                             <div *ngIf="state.errors.required">
-                             
-                             </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -136,10 +137,10 @@
                         <label for="zipCode">ZipCode</label>
                         <input id="zipCode" name="zipCode" type="text" class="form-control"
                             [(ngModel)]="house.address.zipCode" required #zipCode="ngModel">
-                            <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="alert text-danger">
+                        <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="alert text-danger">
                             <div *ngIf="zipCode.errors.required">
-                                
-                             </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
