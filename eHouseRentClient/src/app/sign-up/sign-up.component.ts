@@ -22,20 +22,19 @@ export class SignUpComponent implements OnInit {
 user:User;
 userservice:UserService;
 roles:Role[];
-
+selectedRole:any={}
  constructor(private route: ActivatedRoute, private router:  Router, userservice: UserService) {
      this.user = new User();
     this.userservice=userservice;
     this.user.address=new Address();
+  
+   }
+
+   ngOnInit(): void {
     this.userservice.getAllRole().subscribe(result=>{
       // console.log("result"+result)
      this.roles=result;
     });
-   
-   }
-
-   ngOnInit(): void {
-
    }
    onSubmit() {
      console.log("l;lll");
@@ -43,6 +42,9 @@ roles:Role[];
      this.userservice.save(this.user).subscribe(result => this.getUserList())
 
 
+}
+onRoleSelected(val:any){
+  alert(val);
 }
 getUserList(){
     this.router.navigate(['/house/list']);

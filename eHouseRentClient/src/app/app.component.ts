@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TokenStorageService } from './service/token-storage.service'
-import * as decode from 'jwt-decode';
+
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent {
    
   }
   ngOnInit() {
-     this.Guest=decode(this.tokenStorageService.getToken())['sub']
+    
   }
   
 
