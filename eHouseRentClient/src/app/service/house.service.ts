@@ -39,9 +39,8 @@ export class HouseService {
   }
   public getHouseByStateAndCity(state: String, city: String) {
     let searchUrl=this.baseURL + '/search/' + state + '/' + city;
-    console.log(searchUrl);
+    
     return this.http.get<House[]>(searchUrl);
-
   }
 
 

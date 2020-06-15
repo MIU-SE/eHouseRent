@@ -10,13 +10,15 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="HouseType">House Type</label>
-
                             <input id="houseType" name="houseType" type="text" class="form-control"
-                                [(ngModel)]="house.houseType" required #houseType="ngModel">
+                                [(ngModel)]="house.houseType" required minlength="2" #houseType="ngModel">
                             <div *ngIf="houseType.invalid && (houseType.dirty || houseType.touched)"
                                 class="alert text-danger">
                                 <div *ngIf="houseType.errors.required">
-
+                                    House type is required
+                                </div>
+                                <div *ngIf="houseType.errors.minlength">
+                                    House type must at least be 2 character long
                                 </div>
                             </div>
                         </div>
@@ -31,8 +33,8 @@
                                 class="alert text-danger">
                                 <div *ngIf="numberOfRooms.errors.required">
 
-
-                                </div>
+                                    number Of Rooms is required field
+                                 </div>
                             </div>
                         </div>
                     </div>
@@ -47,18 +49,10 @@
                         <div class="form-group">
                             <label for="description">Description</label>
                             <input id="description" name="description" type="text" class="form-control"
-                                [(ngModel)]="house.description" required #description="ngModel">
+                                [(ngModel)]="house.description" #description="ngModel">
 
-                            <div *ngIf="description.invalid && (description.dirty || description.touched)"
-                                class="alert text-danger">
-                                <div *ngIf="description.errors.required">
-
-
-                                </div>
-                            </div>
                         </div>
                     </div>
-
 
                     <div class="col-md-6">
                         <div class="form-group">
@@ -68,8 +62,7 @@
 
                             <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert text-danger">
                                 <div *ngIf="price.errors.required">
-
-
+                                    Price must be filled
                                 </div>
                             </div>
                         </div>
@@ -88,7 +81,7 @@
                         <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)"
                             class="alert text-danger">
                             <div *ngIf="houseNumber.errors.required">
-
+                                    house number must be filled
 
                             </div>
                         </div>
@@ -102,7 +95,7 @@
 
                         <div *ngIf="street.invalid && (street.dirty || street.touched)" class="alert text-danger">
                             <div *ngIf="street.errors.required">
-
+                                street must be filled
                             </div>
                         </div>
                     </div>
@@ -116,6 +109,7 @@
 
                         <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert text-danger">
                             <div *ngIf="city.errors.required">
+                                city must be filled
                             </div>
                         </div>
                     </div>
@@ -127,7 +121,7 @@
                             [(ngModel)]="house.address.state" required #state="ngModel">
                         <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert text-danger">
                             <div *ngIf="state.errors.required">
-
+                                state must be filled
                             </div>
                         </div>
                     </div>
@@ -139,7 +133,7 @@
                             [(ngModel)]="house.address.zipCode" required #zipCode="ngModel">
                         <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="alert text-danger">
                             <div *ngIf="zipCode.errors.required">
-
+                                    zip code must be filled
                             </div>
                         </div>
                     </div>
@@ -148,8 +142,8 @@
                 <div style="float:right;">
                     <a href="/house/list" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
                     <button id="btnSubmit" type="submit" class="btn btn-outline-success"
-                        [disabled]="!houseForm.valid">Add
-                        House</button>
+                    [disabled]="!houseForm.valid">Add House</button>
+
                 </div>
             </div>
         </fieldset>
