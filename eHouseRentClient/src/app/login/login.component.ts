@@ -11,9 +11,9 @@ import * as decode from 'jwt-decode';
 })
 export class LoginComponent implements OnInit {
 
-  username:String;
+  username: String;
 
-  password:String;
+  password: String;
   // message:any;
 
   // loginUserData = {}
@@ -31,14 +31,15 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private router: 
-    Router ,private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, private router:
+    Router, private tokenStorage: TokenStorageService) { }
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
-    }  }
+    }
+  }
 
   login() {
 
@@ -46,14 +47,14 @@ export class LoginComponent implements OnInit {
       data => {
         this.tokenStorage.saveToken(data.jwt);
         this.tokenStorage.saveUser(data);
-        const payload=decode(data.jwt)
+        const payload = decode(data.jwt)
         console.log(payload);
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         console.log(data.jwt);
-        
+
         this.reloadPage();
       },
       err => {
@@ -66,20 +67,20 @@ export class LoginComponent implements OnInit {
   reloadPage() {
     // window.location.reload();
     this.router.navigate(['/house/list']);
-  
+
   }
 
-//   public getAccessToken(authRequest){
-//     this._auth.generateToken(authRequest).subscribe(data=>{
-//       console.log("Token: "+ data);
-//       this.accessApi(data);
-//     });
-//   }
+  //   public getAccessToken(authRequest){
+  //     this._auth.generateToken(authRequest).subscribe(data=>{
+  //       console.log("Token: "+ data);
+  //       this.accessApi(data);
+  //     });
+  //   }
 
-// public accessApi(token){
-//   let resp=this._auth.welcome(token);
-//   resp.subscribe(data=>this.response=data);
+  // public accessApi(token){
+  //   let resp=this._auth.welcome(token);
+  //   resp.subscribe(data=>this.response=data);
 
-// }
+  // }
 
 }
