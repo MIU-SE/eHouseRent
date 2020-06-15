@@ -4,6 +4,7 @@ import { Booking } from '../model/Booking';
 import { Subscription } from 'rxjs';
 import {BookingService} from '../service/booking.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { House } from '../model/House';
 
 @Component({
   selector: 'app-house-booking',
@@ -19,6 +20,8 @@ export class HouseBookingComponent implements OnInit {
 
   constructor(private route:ActivatedRoute, private router:Router, private bookingService:BookingService) { 
     this.booking=new Booking();
+    this.booking.house= new House();
+    
   }
 
   ngOnInit(): void {

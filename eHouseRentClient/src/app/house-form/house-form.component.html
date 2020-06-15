@@ -30,7 +30,7 @@
                             <div *ngIf="numberOfRooms.invalid && (numberOfRooms.dirty || numberOfRooms.touched)"
                                 class="alert text-danger">
                                 <div *ngIf="numberOfRooms.errors.required">
-                                  
+
 
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                             <div *ngIf="description.invalid && (description.dirty || description.touched)"
                                 class="alert text-danger">
                                 <div *ngIf="description.errors.required">
-                                  
+
 
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
 
                             <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert text-danger">
                                 <div *ngIf="price.errors.required">
-                                   
+
 
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                         <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)"
                             class="alert text-danger">
                             <div *ngIf="houseNumber.errors.required">
-                         
+
 
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                             [(ngModel)]="house.address.state" required #state="ngModel">
                             <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert text-danger">
                             <div *ngIf="state.errors.required">
-                             
+
                              </div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                             [(ngModel)]="house.address.zipCode" required #zipCode="ngModel">
                             <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="alert text-danger">
                             <div *ngIf="zipCode.errors.required">
-                                
+
                              </div>
                         </div>
                     </div>

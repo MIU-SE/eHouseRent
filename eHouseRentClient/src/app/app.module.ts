@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HouseListComponent } from './house-list/house-list.component';
-
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HouseService } from './service/house.service';
 import { BookingService } from './service/booking.service';
@@ -14,9 +14,11 @@ import { HouseFormComponent } from './house-form/house-form.component';
 
 import { HouseSearchComponent } from './house-search/house-search.component';
 import { HouseBookingComponent } from './house-booking/house-booking.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {  NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FilteredHouseListComponent } from './filtered-house-list/filtered-house-list.component';
+import { from } from 'rxjs';
 
 
 @NgModule({
@@ -28,16 +30,15 @@ import { FilteredHouseListComponent } from './filtered-house-list/filtered-house
     HouseBookingComponent,
     SignUpComponent,
     FilteredHouseListComponent
-
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    BrowserModule,     // <========== Add this line!
+    ReactiveFormsModule
   ],
-  providers: [HouseService,BookingService],
+  providers: [HouseService, BookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
