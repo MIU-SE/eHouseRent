@@ -1,33 +1,59 @@
-<p>Simple datepicker</p>
+<div>
+
+  <h2> you succesfuly booked a house</h2>
+  <a href="/search/house" class="btn btn-outline-warning">Return to list</a>&nbsp;&nbsp;&nbsp;
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>Simple datepicker</p>
 
 <form class="form-inline" (ngSubmit)="onSubmit()" #bookingForm="ngForm">
-    <div class="form-group">
-      <div class="input-group">
-        <input class="form-control" placeholder="yyyy-mm-dd"
-               name="dp1" [(ngModel)]="model1" ngbDatepicker #d1="ngbDatepicker">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"></button>
-        </div>
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="dp1" [(ngModel)]="model1" ngbDatepicker
+        #d1="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"></button>
       </div>
     </div>
+  </div>
 
-    <div class="form-group">
-        <div class="input-group">
-          <input class="form-control" placeholder="yyyy-mm-dd"
-                 name="dp2" [(ngModel)]="model2" ngbDatepicker #d2="ngbDatepicker">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
-          </div>
-        </div>
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="dp2" [(ngModel)]="model2" ngbDatepicker
+        #d2="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
       </div>
-
-      <div style="float:left;">
-        <a href="/house/list" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
-        <button id="btnSubmit" type="submit" class="btn btn-outline-success" [disabled]="!bookingForm.valid" >Register house</button>
     </div>
-  </form>
-  
-  <hr/>
-  <pre>Model: {{ model1 | json }}</pre>
-  
-  
+  </div>
+
+
+  <div class="col-md-3" style="float=right">
+    <div class="form-group">
+      <label for="totalPrice">YOUR BOOKING TOTAL</label>
+      <input id="totalPrice" name="totalPrice" type="text" class="form-control" value="{booking.totalPrice}" readonly>
+    </div>
+  </div>
+
+
+  <div style="float:left">
+    <a href="/search/house" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
+    <button id="btnSubmit" type="submit" class="btn btn-outline-success" [disabled]="!bookingForm.valid">Book
+      house</button>
+  </div>
+</form>
+
+<hr />
+<pre>Model: {{ model1 | json }}</pre> -->

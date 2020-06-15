@@ -1,6 +1,7 @@
 
 package miu.edu.cs425.SEProject.eHouseRentAPI.controller;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import miu.edu.cs425.SEProject.eHouseRentAPI.model.Address;
 import miu.edu.cs425.SEProject.eHouseRentAPI.model.House;
 import miu.edu.cs425.SEProject.eHouseRentAPI.repository.HouseRepository;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.Clock;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,17 +28,25 @@ public class HouseController {
     HouseRepository houseRep;
 
     @GetMapping(value = "/search/{state}/{city}")
-    public List<House> getHouseByStateAndCity(@PathVariable String state, @PathVariable String city) {
+    public House[] getHouseByStateAndCity(@PathVariable String state, @PathVariable String city) {
+
         List<Address> address = addressService.findAllByStateAndCity(state, city);
         List<House> houses = new ArrayList<>();
+
         for (Address a : address) {
-           House h = houseService.findByAddress(a);
-            houses.add(h);
-
+            System.out.println("getting houses");
+            House h = houseService.findByAddress(a);
+            if(h!=null)
+                houses.add(h);
         }
+//        for (House hx:houses){
+//            System.out.println(hx.getHouseType());
+//        }
 
-        return  houses;
+        House [] filteredHouses= new House[houses.size()];
+         houses.toArray(filteredHouses);
 
+        return  filteredHouses;
     }
 
     public HouseController(HouseService houseService) {
@@ -56,6 +66,7 @@ public class HouseController {
     @GetMapping(value="/list")
     public House[] getHouse() {
         return houseService.getListOfHouses();
+
     }
     //    @PutMapping(value = "/edit/{houseId}")
 //    public House editHouse(@Valid @RequestBody House editedHouse, @PathVariable Long houseId) {

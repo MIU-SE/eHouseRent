@@ -8,18 +8,20 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(allowedHeaders = "*")
 @RequestMapping(value = "ehouserent/booking")
 public class BookingRecordController {
-
     @Autowired
     BookingRecordServiceImpl bookingRecordService;
+
     @PostMapping(value = "/add")
-    public void creatBookingRecord(@RequestBody BookingRecord bookingRecord){
+    public void creatBookingRecord(@RequestBody BookingRecord bookingRecord) {
         try {
             System.out.println("new booking record is coming");
-            bookingRecordService.saveBooking(bookingRecord);
+           bookingRecordService.saveBooking(bookingRecord);
+            System.out.println("why is not saving???????????");
         } catch (Exception ex) {
-            System.out.println("Transaction Failed!!!");
+            System.out.println("Transaction Failed!!! "+ ex);
         }
     }
     @DeleteMapping(value = {"/delete/{bookingRecordId}"})

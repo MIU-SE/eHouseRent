@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {House} from '../model/House'
 import {HouseService} from '../service/house.service'
+import * as decode from 'jwt-decode';
+import { TokenStorageService } from '../service/token-storage.service'
+
 
 @Component({
   selector: 'app-house-list',
@@ -10,10 +13,18 @@ import {HouseService} from '../service/house.service'
 export class HouseListComponent implements OnInit {
 
   houses:House[];
-
-  constructor(private houseService:HouseService) { }
-
+  public Guest;
+  constructor(private houseService:HouseService,private tokenStorageService:TokenStorageService) { }
+public data;
   ngOnInit(): void {
+    // this.data=sessionStorage.getItem("auth-token");
+    // const payload=decode(this.data)
+    // for(this.i in payload)
+    //     console.log("role "+this.i);
+
+    console.log(sessionStorage.getItem("auth-token"));
+    this.Guest=decode(this.tokenStorageService.getToken())['sub']
+
     this.houseService.findAll().subscribe(data=>{
       this.houses=data;
     })
