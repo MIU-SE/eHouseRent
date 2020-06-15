@@ -19,11 +19,11 @@ public class BookingRecord {
 
 //@DateTimeFormat(pattern = "dd/MM/yyyy")
 //@JsonbDateFormat("dd/MM/yyyy")
-//    @NotNull(message = "{NotNull}")
+    @NotNull(message = "{NotNull}")
     private LocalDate checkInDate;
     //@DateTimeFormat
 //    @DateTimeFormat(pattern = "dd/MM/yyyy")
-//    @NotNull(message = "{NotNull}")
+    @NotNull(message = "{NotNull}")
     private LocalDate checkOutDate;
 //    @NotNull(message = "{NoNUll}")
     private Double totalPrice;

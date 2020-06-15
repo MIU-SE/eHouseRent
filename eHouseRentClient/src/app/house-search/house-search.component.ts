@@ -7,6 +7,8 @@ import { BookingService } from '../service/booking.service'
 import { Subscription } from 'rxjs';
 import { Booking } from '../model/Booking';
 import * as moment from 'moment';
+import { TokenStorageService } from '../service/token-storage.service'
+import * as decode from 'jwt-decode';
 
 
 @Component({
@@ -30,14 +32,18 @@ export class HouseSearchComponent implements OnInit {
   houseId: number;
   diffInDays: number;
   hideTableHeader: boolean;
+  Guest:String;
 
-  constructor(private route: ActivatedRoute, private router: Router, private houseService: HouseService, private bookingService: BookingService) {
+
+  constructor(private route: ActivatedRoute, private router: Router, 
+    private houseService: HouseService, private bookingService: BookingService, private tokenStorageService:TokenStorageService) {
     this.booking = new Booking();
     this.houseLocal = new House();
     this.hideTableHeader = true;
   }
 
   ngOnInit(): void {
+    this.Guest=decode(this.tokenStorageService.getToken())['sub']
   }
 
   searchHouse() {
@@ -63,6 +69,7 @@ export class HouseSearchComponent implements OnInit {
 
 
   saveBooking() {
+        if(this.Guest!=null){
     // this.booking.house = this.houseLocal;
     // console.log(this.booking.house.houseId)
     // console.log("bokking check date= "+moment(this.booking.checkInDate))
@@ -76,7 +83,11 @@ export class HouseSearchComponent implements OnInit {
       this.gotoSuccesfulPage();
     });
     console.log("booking is on the way")
-
+    }
+    else{
+      alert("you have to sign in first");
+      
+    }
   }
 
 
