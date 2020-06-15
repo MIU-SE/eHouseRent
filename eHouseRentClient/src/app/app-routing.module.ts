@@ -4,6 +4,7 @@ import { HouseListComponent } from './house-list/house-list.component';
 import { HouseFormComponent } from './house-form/house-form.component'
 import { HouseBookingComponent } from './house-booking/house-booking.component';
 import { HouseSearchComponent } from './house-search/house-search.component';
+import { LoginComponent } from './login/login.component'
 import { FilteredHouseListComponent } from './filtered-house-list/filtered-house-list.component';
 
 
@@ -15,8 +16,9 @@ const routes: Routes = [
   { path: '', component: HouseSearchComponent },
   { path: 'search/state/city', component: FilteredHouseListComponent },
   { path: 'house/booking', component: HouseBookingComponent },
-  { path: 'search/house', component: HouseSearchComponent }
-
+  { path: 'search/house', component: HouseSearchComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/search/state/city', pathMatch: 'full' }
 
 ];
 

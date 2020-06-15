@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TokenStorageService } from './service/token-storage.service'
+import * as decode from 'jwt-decode';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'eHouseRentClient';
+  Guest='';
+  constructor(private tokenStorageService:TokenStorageService){
+
+   
+  }
+  ngOnInit() {
+     this.Guest=decode(this.tokenStorageService.getToken())['sub']
+  }
+  
+
 }
