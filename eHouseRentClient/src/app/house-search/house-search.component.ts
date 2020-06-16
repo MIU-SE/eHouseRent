@@ -59,12 +59,8 @@ export class HouseSearchComponent implements OnInit {
           this.houses = result;
           this.bookingForm = true;
           this.hideTableHeader = false;
-          console.log("searching is on the way" + this.houses[1] + " eee");
+          console.log("searching is on the way" + this.houses[1]);
         }
-
-        console.log(alert("house not found"))
-
-
       })
 
 

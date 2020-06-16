@@ -39,23 +39,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 form-inline">
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Add check-in date" name="dp1" [(ngModel)]="model1"
-                                ngbDatepicker #d1="ngbDatepicker" [(ngModel)]=check_in_date>
-                            <!-- [(ngModel)]="booking.checkInDate"> -->
-
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()"
-                                    type="button"></button>
-                            </div>
+                <div class="col-md-6 form-inline">
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Add check-in date" name="dp1" [(ngModel)]="model1"
+                        ngbDatepicker #d1="ngbDatepicker"  [(ngModel)]=check_in_date>
+                        
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"></button>
                         </div>
                     </div>
                     <div class="col-md-6 form-inline">
                         <div class="form-group">
                             <input class="form-control" placeholder="Add check-out date" name="dp2" [(ngModel)]="model2"
                                 ngbDatepicker #d2="ngbDatepicker" [(ngModel)]=check_out_date>
-                            <!--[(ngModel)]="booking.checkOutDate">-->
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()"
                                     type="button"></button>
