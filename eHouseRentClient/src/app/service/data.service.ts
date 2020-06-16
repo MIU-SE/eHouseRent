@@ -8,6 +8,7 @@ import * as decode from 'jwt-decode';
 export class DataService {
 
   private messageSource = new BehaviorSubject(this.getData());
+  // private messageSource = new BehaviorSubject('guset');
   currentMessage = this.messageSource.asObservable();
 
   constructor() { }
@@ -19,17 +20,28 @@ export class DataService {
   getData(){
     // let d;
     // d=decode(this.tokenStorageService.getToken());
-    let d=sessionStorage.getItem("auth-token");
+    try{
+      let d=sessionStorage.getItem("auth-token");
     
-    let decoded=decode(d)['sub']
-    console.log("decodedd: "+decoded);
-    console.log(decoded);
+      let decoded=decode(d)['sub']
+      console.log("decodedd: "+decoded);
+      return decoded;
+    // console.log(decoded);
+    }
+    catch(e){
+        console.log("error: "+e);
+        return 'guest';
+    }
+    
     
     // if(d!=null){
     //   return d;
     // else
     // return d!=null? d['sub']:"guest"
-    return decoded;
+    
+    // if(decode!=null)
+    //   return decoded;
+    // return 'guest';
     
   }
 }

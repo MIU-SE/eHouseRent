@@ -1,6 +1,8 @@
 <!-- import{House}from "./house"; -->
 <div class="container" style="margin-top: 2em;">
-    <form (ngSubmit)="searchHouse()" #houseForm="ngForm">
+    <h3 style="color:blue">Well Come To Our eHouseRent system</h3>
+
+    <form [hidden]="bookingForm" (ngSubmit)="searchHouse()" #houseForm="ngForm">
         <fieldset>
             <div class="row">
                 <div class="col-md-6">
@@ -38,7 +40,7 @@
                 <div class="col-md-6 form-inline">
                     <div class="form-group">
                         <input class="form-control" placeholder="Add check-in date" name="dp1" [(ngModel)]="model1"
-                        ngbDatepicker #d1="ngbDatepicker"  [(ngModel)]=check_in_date><!-- [(ngModel)]="booking.checkInDate"> -->
+                        ngbDatepicker #d1="ngbDatepicker"  [(ngModel)]=check_in_date>
                         
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"></button>
@@ -48,7 +50,7 @@
                     <div class="col-md-6 form-inline">
                         <div class="form-group">
                             <input class="form-control" placeholder="Add check-out date" name="dp2" [(ngModel)]="model2"
-                                ngbDatepicker #d2="ngbDatepicker" [(ngModel)]=check_out_date><!--[(ngModel)]="booking.checkOutDate">-->
+                                ngbDatepicker #d2="ngbDatepicker" [(ngModel)]=check_out_date>
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
                             </div>
@@ -84,17 +86,19 @@
                             <div *ngSwitchCase="'house'">
 
                                 <img src="assets/images/jesse-roberts-561igiTyvSk-unsplash.jpg"
-                                    style="width:200px;height:200px;">
+                                    style="width:200px;height:100;">
+
                             </div>
 
                             <div *ngSwitchCase="'appartment'">
-                                <img src="assets/images/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg" style="width:200px;height:200px;">
+                                <img src="assets/images/brandon-griggs-wR11KBaB86U-unsplash.jpg"
+                                    style="width:150px;height:100;">
 
                             </div>
 
-                            <div *ngSwitchCase="'villa'">
-                                <img src="assets/images/sophia-kunkel-F84XvXyEYk4-unsplash.jpg" ,style=" width:200px;
-                                        height:200px">
+                            <div *ngSwitchCase="'luxury'">
+                                <img src="assets/images/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg"
+                                    style=" width:200px; height:100">
                             </div>
                             <div *ngSwitchDefault>
                                 <img src="assets/images/logo-nav@2x.png" ,style=" width:213px; height:119px">
@@ -114,6 +118,10 @@
                             <button id="btnSubmit" type="submit" class="btn btn-outline-success" [disabled]="!houseForm.valid">Book
                             </button>
                         </div>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-primary btn-lg" href="house/search">cancel</a>
+
                     </td>
                 </tr>
             </tbody>

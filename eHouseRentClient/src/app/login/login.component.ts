@@ -54,7 +54,9 @@ export class LoginComponent implements OnInit {
         const payload=decode(data.jwt)
         this.myGuest=payload['sub'];
         this.changeName(this.myGuest);
-        console.log("payloood: "+ this.myGuest);
+        
+        console.log("token: "+ data.jwt);
+        console.log("payload: "+ this.myGuest);
         
         this.isLoginFailed = false;
         this.isLoggedIn = true;

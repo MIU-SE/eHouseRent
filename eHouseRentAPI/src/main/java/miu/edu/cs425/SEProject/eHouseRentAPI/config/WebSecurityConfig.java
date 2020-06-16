@@ -73,6 +73,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable();
         http
                 .authorizeRequests().antMatchers("/ehouserent/signin").permitAll()
+                .antMatchers("/ehouserent/user/role/*").permitAll()
+                .antMatchers("/ehouserent/user/**").permitAll()
                 .antMatchers("/ehouserent/house/search/**").permitAll()
                 .anyRequest().authenticated()
                 .and()

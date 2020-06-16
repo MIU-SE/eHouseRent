@@ -49,7 +49,7 @@ roles:Role[];
 
 
 getUserList(){
-    this.router.navigate(['/house/list']);
+    this.router.navigate(['/search/house']);
   }
 
 }
