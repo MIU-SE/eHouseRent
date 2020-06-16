@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a style="padding-right: 2em;" class="navbar-brand" href="/eHouseRent/home">eHouseRent - a platform to rent
         houses</a>
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
         aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -15,16 +14,16 @@
             <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em; padding-right: 2em;">
                 <a class="nav-link" routerLink="/house/list">My list of Houses</a>
             </li>
-            <!-- <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em; padding-right: 2em;">
-                <a class="nav-link" routerLink="/booking/add">add booking</a>
-            </li> -->
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <span style="color: #ffffff;">Welcome,&nbsp;</span>
             <a style="color: #ffffff; margin-right: 1em;" href="#">{{Guest}}</a>
-            <a routerLink="/login" *ngIf="Guest == null"  routerLinkActive="active" class="nav-link">Sign In</a>
-            <a routerLink="/register" *ngIf="Guest == null" routerLinkActive="active" class="btn btn-secondary">Sign up</a>
-            <a (click)="signout()" *ngIf="Guest != null" routerLinkActive="active" class="btn btn-secondary">Sign out</a>
+            <a routerLink="/login" *ngIf="Guest == null" routerLinkActive="active" class="nav-link">Sign In</a>
+            <a routerLink="/register" *ngIf="Guest == null" routerLinkActive="active" class="btn btn-secondary">Sign
+                up</a>
+            <a (click)="signout()" *ngIf="Guest != null" routerLinkActive="active" class="btn btn-secondary">Sign
+                out</a>
 
         </form>
     </div>

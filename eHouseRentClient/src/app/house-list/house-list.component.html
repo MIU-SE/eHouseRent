@@ -26,7 +26,7 @@
                 <td>{{house.numberOfRooms}}</td>
                 <td>{{house.description}}</td>
                 <td><a class="btn btn-outline-primary" [routerLink]="['/owner/house/edit', house.houseId]"><i
-                            class="fa fa-edit"></i></a></td>
+                            class="fa fa-edit"></i></a> edit</td>
                 <td><a class="btn btn-outline-danger" (click)="deleteHouse(house.houseId)"><i
                             class="fa fa-trash"></i></a></td>
             </tr>
