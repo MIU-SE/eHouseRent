@@ -1,3 +1,4 @@
+
 insert into roles(role)values ("ROLE_OWNER")
 insert into roles(role)values ("ROLE_USER")
 
@@ -33,6 +34,7 @@ insert into houses(price,description,owner_id,addres_id,house_type,number_of_roo
 
 insert into booking_records(check_in_date,check_out_date,total_price,house_id,user_id)values("2020-06-06","2020-06-10",100,1,3)
 insert into booking_records(check_in_date,check_out_date,total_price,house_id,user_id)values("2020-06-06","2020-06-10",100,2,4)
+
 
 insert into users_roles(user_id,role_id) value (1,1)
 insert into users_roles(user_id,role_id) value (2,2)

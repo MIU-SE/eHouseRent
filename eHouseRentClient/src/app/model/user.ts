@@ -1,7 +1,10 @@
 
 // import{House}from "./House";
+import{Role} from "./role";
 import{Address}from "./Address";
-export class user {
+
+export class User {
+
     firstName:String;
     lastName :String;
     phoneNo :String;
@@ -10,6 +13,6 @@ export class user {
     email:String;
     password:String;
     address :Address;
-    // userHouse:House ;
-    //    role :Role;
+       role:Role;
+   
 }

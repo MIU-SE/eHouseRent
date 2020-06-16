@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute, Router } from '@angular/router';
 import { House } from '../model/House'
@@ -72,7 +72,6 @@ export class HouseSearchComponent implements OnInit {
   }
   getHouse() {
     //  this.booking.house.houseId = this.houseLocal.houseId;
-
     this.houseService.get(this.houseId).subscribe(newhouse => {
       this.houseLocal = newhouse;
       console.log("searching is on the way");
