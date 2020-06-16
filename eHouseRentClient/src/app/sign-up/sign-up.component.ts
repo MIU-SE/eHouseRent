@@ -47,7 +47,7 @@ onRoleSelected(val:any){
   alert(val);
 }
 getUserList(){
-    this.router.navigate(['/house/list']);
+    this.router.navigate(['/search/house']);
   }
 
 }

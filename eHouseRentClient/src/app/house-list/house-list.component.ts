@@ -32,13 +32,18 @@ public data;
 
   deleteHouse(id:number){
     if(confirm("Are you sure to delete "+name)) {
-      this.houseService.delete(id).subscribe(data=>{
+      try {
+         this.houseService.delete(id).subscribe(data=>{
         console.log(data);
         this.houseService.findAll().subscribe(data =>{
           this.houses=data;
         })
       },
       error=>console.log(error));
+      } catch (error) {
+        confirm("already booked");
+      }
+     
     }
 
   }
