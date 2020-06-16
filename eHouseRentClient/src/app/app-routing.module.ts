@@ -5,8 +5,8 @@ import { HouseFormComponent } from './house-form/house-form.component'
 import { HouseBookingComponent } from './house-booking/house-booking.component';
 import { HouseSearchComponent } from './house-search/house-search.component';
 import { LoginComponent } from './login/login.component'
-import { FilteredHouseListComponent } from './filtered-house-list/filtered-house-list.component';
-
+import {SignUpComponent} from './sign-up/sign-up.component';
+import {FilteredHouseListComponent} from './filtered-house-list/filtered-house-list.component';
 
 const routes: Routes = [
   { path: 'house/list', component: HouseListComponent },
@@ -18,12 +18,18 @@ const routes: Routes = [
   { path: 'house/booking', component: HouseBookingComponent },
   { path: 'search/house', component: HouseSearchComponent },
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: 'search/house', pathMatch: 'full' }
+  { path: '', redirectTo: '/search/house', pathMatch: 'full' },
+  {path:'register',component:SignUpComponent}
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [],
+  imports: [
+
+    RouterModule.forRoot(routes)// {onSameUrlNavigation: 'reload'}
+  ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

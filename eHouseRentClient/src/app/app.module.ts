@@ -21,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { FilteredHouseListComponent } from './filtered-house-list/filtered-house-list.component';
 
 import { AuthInterceptor } from './service/AuthInterceptor'
+import {DataService} from './service/data.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,7 @@ import { AuthInterceptor } from './service/AuthInterceptor'
     FormsModule,
     NgbModule
   ],
-  providers: [HouseService, BookingService, AuthService, AuthInterceptor,
+  providers: [HouseService, BookingService, AuthService, DataService,AuthInterceptor,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

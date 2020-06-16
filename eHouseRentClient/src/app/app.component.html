@@ -3,8 +3,7 @@
     <a style="padding-right: 2em;" class="navbar-brand" href="/eHouseRent/home">eHouseRent - A Platform To Rent
         houses</a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -26,6 +25,8 @@
             <a routerLink="/login" routerLinkActive="active" class="btn btn-primary">Sign In</a>
             &nbsp;&nbsp;
            <a routerLink="/register" routerLinkActive="active" class="btn btn-primary">Sign up</a>
+           <a (click)="signout()" *ngIf="Guest != null" routerLinkActive="active" class="btn btn-secondary">Sign out</a>
+
 
         </form>
     </div>

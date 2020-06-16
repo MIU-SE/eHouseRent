@@ -10,10 +10,8 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="HouseType">House Type</label>
-                            <input id="houseType" name="houseType" type="text" class="form-control"
-                                [(ngModel)]="house.houseType" required minlength="2" #houseType="ngModel">
-                            <div *ngIf="houseType.invalid && (houseType.dirty || houseType.touched)"
-                                class="alert text-danger">
+                            <input id="houseType" name="houseType" type="text" class="form-control" [(ngModel)]="house.houseType" required minlength="2" #houseType="ngModel">
+                            <div *ngIf="houseType.invalid && (houseType.dirty || houseType.touched)" class="alert text-danger">
                                 <div *ngIf="houseType.errors.required">
                                     House type is required
                                 </div>
@@ -26,15 +24,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="numberOfRooms">Number Of Rooms</label>
-                            <input id="numberOfRooms" name="numberOfRooms" type="text" class="form-control"
-                                [(ngModel)]="house.numberOfRooms" required #numberOfRooms="ngModel">
+                            <input id="numberOfRooms" name="numberOfRooms" type="text" class="form-control" [(ngModel)]="house.numberOfRooms" required #numberOfRooms="ngModel">
 
-                            <div *ngIf="numberOfRooms.invalid && (numberOfRooms.dirty || numberOfRooms.touched)"
-                                class="alert text-danger">
+                            <div *ngIf="numberOfRooms.invalid && (numberOfRooms.dirty || numberOfRooms.touched)" class="alert text-danger">
                                 <div *ngIf="numberOfRooms.errors.required">
 
                                     number Of Rooms is required field
-                                 </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -48,8 +44,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <input id="description" name="description" type="text" class="form-control"
-                                [(ngModel)]="house.description" #description="ngModel">
+                            <input id="description" name="description" type="text" class="form-control" [(ngModel)]="house.description" #description="ngModel">
 
                         </div>
                     </div>
@@ -57,8 +52,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="price">Price</label>
-                            <input id="price" name="price" type="text" class="form-control" [(ngModel)]="house.price"
-                                required #price="ngModel">
+                            <input id="price" name="price" type="text" class="form-control" [(ngModel)]="house.price" required #price="ngModel">
 
                             <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert text-danger">
                                 <div *ngIf="price.errors.required">
@@ -68,60 +62,57 @@
                         </div>
                     </div>
                 </div>
-                <h5> ADDRESS</h5>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="hidden" name="addressId" #addressId="ngModel"
-                            [(ngModel)]="house.address.addressId" />
 
-                        <label for="houseNumber">House Number</label>
-                        <input id="houseNumber" name="houseNumber" type="text" class="form-control"
-                            [(ngModel)]="house.address.houseNumber" required #houseNumber="ngModel">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="hidden" name="addressId" #addressId="ngModel" [(ngModel)]="house.address.addressId" />
 
-                        <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)"
-                            class="alert text-danger">
-                            <div *ngIf="houseNumber.errors.required">
+                            <label for="houseNumber">House Number</label>
+                            <input id="houseNumber" name="houseNumber" type="text" class="form-control" [(ngModel)]="house.address.houseNumber" required #houseNumber="ngModel">
+
+                            <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)" class="alert text-danger">
+                                <div *ngIf="houseNumber.errors.required">
                                     house number must be filled
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="street">Street</label>
+                            <input id="street" name="street" type="text" class="form-control" [(ngModel)]="house.address.street" required #street="ngModel">
+
+                            <div *ngIf="street.invalid && (street.dirty || street.touched)" class="alert text-danger">
+                                <div *ngIf="street.errors.required">
+                                    street must be filled
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="street">Street</label>
-                        <input id="street" name="street" type="text" class="form-control"
-                            [(ngModel)]="house.address.street" required #street="ngModel">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input id="city" name="city" type="text" class="form-control" [(ngModel)]="house.address.city" required #city="ngModel">
 
-                        <div *ngIf="street.invalid && (street.dirty || street.touched)" class="alert text-danger">
-                            <div *ngIf="street.errors.required">
-                                street must be filled
+                            <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert text-danger">
+                                <div *ngIf="city.errors.required">
+                                    city must be filled
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="city">City</label>
-                        <input id="city" name="city" type="text" class="form-control" [(ngModel)]="house.address.city"
-                            required #city="ngModel">
-
-                        <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert text-danger">
-                            <div *ngIf="city.errors.required">
-                                city must be filled
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="state">State</label>
-                        <input id="state" name="state" type="text" class="form-control"
-                            [(ngModel)]="house.address.state" required #state="ngModel">
-                        <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert text-danger">
-                            <div *ngIf="state.errors.required">
-                                state must be filled
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input id="state" name="state" type="text" class="form-control" [(ngModel)]="house.address.state" required #state="ngModel">
+                            <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert text-danger">
+                                <div *ngIf="state.errors.required">
+                                    state must be filled
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -129,11 +120,10 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="zipCode">ZipCode</label>
-                        <input id="zipCode" name="zipCode" type="text" class="form-control"
-                            [(ngModel)]="house.address.zipCode" required #zipCode="ngModel">
+                        <input id="zipCode" name="zipCode" type="text" class="form-control" [(ngModel)]="house.address.zipCode" required #zipCode="ngModel">
                         <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="alert text-danger">
                             <div *ngIf="zipCode.errors.required">
-                                    zip code must be filled
+                                zip code must be filled
                             </div>
                         </div>
                     </div>
@@ -141,8 +131,7 @@
 
                 <div style="float:right;">
                     <a href="/house/list" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
-                    <button id="btnSubmit" type="submit" class="btn btn-outline-success"
-                    [disabled]="!houseForm.valid">Add House</button>
+                    <button id="btnSubmit" type="submit" class="btn btn-outline-success" [disabled]="!houseForm.valid">Add House</button>
 
                 </div>
             </div>
