@@ -25,10 +25,16 @@
                 <td>{{house.price}}</td>
                 <td>{{house.numberOfRooms}}</td>
                 <td>{{house.description}}</td>
-                <td><a class="btn btn-outline-primary" [routerLink]="['/owner/house/edit', house.houseId]"><i
-                            class="fa fa-edit"></i></a> edit</td>
-                <td><a class="btn btn-outline-danger" (click)="deleteHouse(house.houseId)"><i
-                            class="fa fa-trash"></i></a></td>
+                <!-- <td><a class="btn btn-outline-primary" [routerLink]="['/owner/house/edit', house.houseId]"><i
+                            class="fa fa-edit"></i></a> </td> -->
+                <!-- <lass="fa fa-edit"></i></a></td> -->
+                <td>
+                    <button type="button" class="btn btn-outline-success"
+                        [routerLink]="['/owner/house/edit', house.houseId]">edit</button>
+
+                </td>
+                <td><button type="betton" class="btn btn-outline-danger"
+                        (click)="deleteHouse(house.houseId)">delet</button>
             </tr>
         </tbody>
     </table>

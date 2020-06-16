@@ -14,7 +14,7 @@ insert into addresses(house_number,state,city,street,zip_code)values("14","iowa"
 insert into addresses(house_number,state,city,street,zip_code)values("15","iowa","fairfield","13",75243)
 
 -- owners
-insert into users(first_name,last_name,phone_no,pass_word,user_name,address_id)values ("selam","ghide","123456","1212","selam@g",1)
+insert into users(first_name,last_name,phone_no,pass_word,user_name,address_id)values ("selam","ghide","123456","selam","selam",1)
 insert into users(first_name,last_name,phone_no,pass_word,user_name,address_id)values ("Jirom","ghide","123456","1212","jirom@g",2)
 -- customers
 insert into users(first_name,last_name,phone_no,pass_word,user_name,address_id)values ("Bruk","ghide","123456","bruk","bruk",1)

@@ -9,7 +9,8 @@
                         <div class="form-group">
                             <label for="FirstName">FirstName</label>
                             <!-- <div [hidden]="!studentNumber.valid && (studentNumber.dirty || studentNumber.touched)" class="alert alert-danger">Student number is required</div> -->
-                            <input text="firstName" name="firstName" type="text" class="form-control" [(ngModel)]="user.firstName" required #FirstName="ngModel">
+                            <input text="firstName" name="firstName" type="text" class="form-control"
+                                [(ngModel)]="user.firstName" required #FirstName="ngModel">
                             <!-- <div *ngIf="studentNumber.invalid && (studentNumber.dirty || studentNumber.touched)" class="alert text-danger">
                                 <div *ngIf="studentNumber.errors.required">
                                     studentNumber is required. 
@@ -42,7 +43,7 @@
                     <div class="form-group">
                         <label for="passWord">PassWord</label>
                         <span th:if="${#fields.hasErrors('passWord')}" th:errors="*{passWord}" class="alert text-danger"></span>
-                        <input text="passWord" name="passWord" type="text" #passWord="ngModel" class="form-control" [(ngModel)]="user.passWord">
+                        <input text="passWord" name="passWord" type="password" #passWord="ngModel" class="form-control" [(ngModel)]="user.passWord">
                     </div>
                 </div>
             </div>
