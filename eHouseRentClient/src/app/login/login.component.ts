@@ -13,7 +13,7 @@ import { DataService} from '../service/data.service'
 })
 export class LoginComponent implements OnInit {
 
-  username:String;
+  username: String;
 
   password:String;
   // loginUserData = {}
@@ -84,17 +84,17 @@ export class LoginComponent implements OnInit {
   
   }
 
-//   public getAccessToken(authRequest){
-//     this._auth.generateToken(authRequest).subscribe(data=>{
-//       console.log("Token: "+ data);
-//       this.accessApi(data);
-//     });
-//   }
+  //   public getAccessToken(authRequest){
+  //     this._auth.generateToken(authRequest).subscribe(data=>{
+  //       console.log("Token: "+ data);
+  //       this.accessApi(data);
+  //     });
+  //   }
 
-// public accessApi(token){
-//   let resp=this._auth.welcome(token);
-//   resp.subscribe(data=>this.response=data);
+  // public accessApi(token){
+  //   let resp=this._auth.welcome(token);
+  //   resp.subscribe(data=>this.response=data);
 
-// }
+  // }
 
 }
