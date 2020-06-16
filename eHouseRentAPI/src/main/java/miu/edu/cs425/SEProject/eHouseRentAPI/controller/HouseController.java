@@ -30,7 +30,7 @@ public class HouseController {
     @GetMapping(value = "/search/{state}/{city}")
     public House[] getHouseByStateAndCity(@PathVariable String state, @PathVariable String city) {
 
-        List<Address> address = addressService.findAllByStateAndCity(state, city);
+        List<Address>  address = addressService.findAllByStateAndCity(state, city);
         List<House> houses = new ArrayList<>();
 
         for (Address a : address) {

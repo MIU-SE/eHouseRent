@@ -32,18 +32,20 @@ export class HouseSearchComponent implements OnInit {
   houseId: number;
   diffInDays: number;
   hideTableHeader: boolean;
-  Guest:String;
+  bookingForm: boolean;
+  Guest: String;
 
 
-  constructor(private route: ActivatedRoute, private router: Router, 
-    private houseService: HouseService, private bookingService: BookingService, private tokenStorageService:TokenStorageService) {
+  constructor(private route: ActivatedRoute, private router: Router,
+    private houseService: HouseService, private bookingService: BookingService, private tokenStorageService: TokenStorageService) {
     this.booking = new Booking();
     this.houseLocal = new House();
     this.hideTableHeader = true;
+    this.bookingForm = false;
   }
 
   ngOnInit(): void {
-    this.Guest=decode(this.tokenStorageService.getToken())['sub']
+    this.Guest = decode(this.tokenStorageService.getToken())['sub']
   }
 
   searchHouse() {
@@ -53,10 +55,20 @@ export class HouseSearchComponent implements OnInit {
     console.log("difference in days= " + this.diffInDays);
     this.houseService.getHouseByStateAndCity(this.state, this.city)
       .subscribe(result => {
-        this.houses = result;
-        this.hideTableHeader = false;
-        console.log("searching is on the way" + this.houses[1] + " eee");
+        if (result != null) {
+          this.houses = result;
+          this.bookingForm = true;
+          this.hideTableHeader = false;
+          console.log("searching is on the way" + this.houses[1] + " eee");
+        }
+
+        console.log(alert("house not found"))
+
+
       })
+
+
+
   }
   getHouse() {
     //  this.booking.house.houseId = this.houseLocal.houseId;
@@ -68,24 +80,24 @@ export class HouseSearchComponent implements OnInit {
 
 
   saveBooking() {
-        if(this.Guest!=null){
-    // this.booking.house = this.houseLocal;
-    // console.log(this.booking.house.houseId)
-    // console.log("bokking check date= "+moment(this.booking.checkInDate))
+    if (this.Guest != null) {
+      // this.booking.house = this.houseLocal;
+      // console.log(this.booking.house.houseId)
+      // console.log("bokking check date= "+moment(this.booking.checkInDate))
 
-    console.log("checking date= " + this.model1.year);
-    this.booking.checkInDate = new Date(this.model1.year + "-" + this.model1.month + "-" + this.model1.day);
-    this.booking.checkOutDate = new Date(this.model2.year + "-" + this.model2.month + "-" + this.model2.day);
-    // this.booking.totalPrice=3200;
-    this.bookingService.save(this.booking).subscribe(result => {
-      console.log("result: " + result);
-      this.gotoSuccesfulPage();
-    });
-    console.log("booking is on the way")
+      console.log("checking date= " + this.model1.year);
+      this.booking.checkInDate = new Date(this.model1.year + "-" + this.model1.month + "-" + this.model1.day);
+      this.booking.checkOutDate = new Date(this.model2.year + "-" + this.model2.month + "-" + this.model2.day);
+      // this.booking.totalPrice=3200;
+      this.bookingService.save(this.booking).subscribe(result => {
+        console.log("result: " + result);
+        this.gotoSuccesfulPage();
+      });
+      console.log("booking is on the way")
     }
-    else{
+    else {
       alert("you have to sign in first");
-      
+
     }
   }
 
