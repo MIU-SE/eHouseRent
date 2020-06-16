@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     Router ,private tokenStorage: TokenStorageService) { }
 
   ngOnInit() {
-    this.d.currentMessage.subscribe(m=>this.myGuest=m)
+    // this.d.currentMessage.subscribe(m=>this.myGuest=m)
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
@@ -53,12 +53,13 @@ export class LoginComponent implements OnInit {
 
         const payload=decode(data.jwt)
         this.myGuest=payload['sub'];
+        this.changeName(this.myGuest);
         console.log("payloood: "+ this.myGuest);
         
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-        console.log(data.jwt);
+        // this.roles = this.tokenStorage.getUser().roles;
+        // console.log(data.jwt);
         
         this.reloadPage();
       },
@@ -68,6 +69,12 @@ export class LoginComponent implements OnInit {
       }
     );
 
+  }
+
+  changeName(name){
+    // this.d.currentMessage.subscribe(message=>this.myGuest=name)
+    this.d.changeMessage(name);
+    
   }
 
   reloadPage() {

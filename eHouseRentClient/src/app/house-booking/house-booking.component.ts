@@ -1,5 +1,5 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit} from '@angular/core';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Booking } from '../model/Booking';
 import { Subscription } from 'rxjs';
 import { BookingService } from '../service/booking.service';
@@ -18,6 +18,7 @@ export class HouseBookingComponent implements OnInit {
   house:House;
   sub: Subscription;
   date: { year: number, month: number };
+
 
   constructor(private route: ActivatedRoute, private router: Router, private bookingService: BookingService) {
     this.booking = new Booking();
