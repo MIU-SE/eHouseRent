@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-    <!-- navbar navbar-light" style="background-color: #e3f2fd; -->
     <a style="padding-right: 2em;" class="navbar-brand" href="/eHouseRent/home">eHouseRent - A Platform To Rent
         houses</a>
 
@@ -15,18 +14,13 @@
             <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em; padding-right: 2em;">
                 <a class="nav-link" routerLink="/house/list">My list of Houses</a>
             </li>
-            <!-- <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em; padding-right: 2em;">
-                <a class="nav-link" routerLink="/booking/add">add booking</a>
-            </li> -->
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <span style="color: #ffffff;">Welcome,&nbsp;</span>
             <a style="color: #ffffff; margin-right: 1em;" href="#">{{Guest}}</a>
             <a routerLink="/login" *ngIf="Guest == 'guest'"  routerLinkActive="active" class="nav-link">Sign In</a>
-            &nbsp;&nbsp;
             <a routerLink="/register" *ngIf="Guest == 'guest'" routerLinkActive="active" class="btn btn-secondary">Sign up</a>
             <a (click)="signout()" *ngIf="Guest != 'guest'" routerLinkActive="active" class="btn btn-secondary">Sign out</a>
-
         </form>
     </div>
 </nav>
