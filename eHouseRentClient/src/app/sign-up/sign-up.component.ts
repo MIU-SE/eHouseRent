@@ -22,7 +22,7 @@ export class SignUpComponent implements OnInit {
 user:User;
 userservice:UserService;
 roles:Role[];
-selectedRole:any={}
+
  constructor(private route: ActivatedRoute, private router:  Router, userservice: UserService) {
      this.user = new User();
     this.userservice=userservice;
@@ -39,13 +39,15 @@ selectedRole:any={}
    onSubmit() {
      console.log("l;lll");
     //  this.user.role=this.roles.find(x=>x.role="owner");
-     this.userservice.save(this.user).subscribe(result => this.getUserList())
+     this.userservice.save(this.user).subscribe(result => 
+      this.getUserList())
+    
+     
 
 
 }
-onRoleSelected(val:any){
-  alert(val);
-}
+
+
 getUserList(){
     this.router.navigate(['/search/house']);
   }
